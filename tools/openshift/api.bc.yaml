@@ -10,8 +10,8 @@ objects:
     kind: BuildConfig
     metadata:
       labels:
-        build: pen-demographics-pipeline
-      name: pen-demographics-pipeline
+        build: pen-demographics-api-pipeline
+      name: pen-demographics-api-pipeline
       namespace: c2mvws-tools
     spec:
       source:
