@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @Builder
 @AllArgsConstructor
@@ -21,20 +19,7 @@ public class PenDemographics {
   private String usualMiddle;
   private String studBirth;
   private String studSex;
-  private String studDemogCode;
   private String studStatus;
-  private String penLocalId;
-  private String penMincode;
-  private String postal;
-  private String studTrueNo;
-  private String mergeToUserName;
-  private String mergeToCode;
-  private Date createDate;
+  private String createDate;
   private String createUserName;
-  private Date updateDate;
-  private String updateUserName;
-  private String studGrade;
-  private Integer studGradeYear;
-  private Date updateDemogDate;
-  private Date mergeToDate;
 }
