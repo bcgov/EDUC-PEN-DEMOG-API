@@ -25,12 +25,12 @@ pipeline{
             - name: SONARQUBE_HOSTNAME
               valueFrom:
                 secretKeyRef:
-                  name: 'pen-request-api-secrets'
+                  name: 'pen-demographics-api-secrets'
                   key: sonarqube-host
             - name: SONARQUBE_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: 'pen-request-api-secrets'
+                  name: 'pen-demographics-api-secrets'
                   key: sonarqube-token
             volumeMounts:
             - mountPath: '/home/jenkins/.m2'

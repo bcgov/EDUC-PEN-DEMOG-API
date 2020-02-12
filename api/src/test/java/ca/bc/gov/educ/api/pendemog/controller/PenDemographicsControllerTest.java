@@ -52,7 +52,21 @@ public class PenDemographicsControllerTest {
     );
     List<PenDemographics> entities = new ObjectMapper().readValue(file, new TypeReference<List<PenDemographics>>() {
     });
-    repository.saveAll(entities.stream().map(mapper::toModel).collect(Collectors.toList()));
+    repository.saveAll(entities.stream().map(penDemographics -> {
+      if (penDemographics.getStudGiven() != null) {
+        penDemographics.setStudGiven(penDemographics.getStudGiven().toUpperCase());
+      }
+      if (penDemographics.getStudSurname() != null) {
+        penDemographics.setStudSurname(penDemographics.getStudSurname().toUpperCase());
+      }
+      if (penDemographics.getStudMiddle() != null) {
+        penDemographics.setStudMiddle(penDemographics.getStudMiddle().toUpperCase());
+      }
+      if (penDemographics.getStudSex() != null) {
+        penDemographics.setStudSex(penDemographics.getStudSex().toUpperCase());
+      }
+      return mapper.toModel(penDemographics);
+    }).collect(Collectors.toList()));
   }
 
   @Test
@@ -64,8 +78,8 @@ public class PenDemographicsControllerTest {
             .andExpect(status().isOk())
             .andDo(print())
             .andExpect(jsonPath("$.pen", is("7613009916")))
-            .andExpect(jsonPath("$.studSurname", is("Fratczak")))
-            .andExpect(jsonPath("$.studGiven", is("Jaquelin")))
+            .andExpect(jsonPath("$.studSurname", is("Fratczak".toUpperCase())))
+            .andExpect(jsonPath("$.studGiven", is("Jaquelin".toUpperCase())))
             .andExpect(jsonPath("$.studBirth", is("20010519")));
 
   }

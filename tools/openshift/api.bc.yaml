@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Template
 labels:
-  template: 'educ-pen-demographics-api-template'
+  template: 'pen-demographics-api-template'
 metadata:
-  name: 'educ-pen-demographics-api-template'
+  name: 'pen-demographics-api-template'
 objects:
   - apiVersion: v1
     kind: BuildConfig
