@@ -7,6 +7,7 @@ import ca.bc.gov.educ.api.pendemog.struct.PenDemographics;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,10 @@ public class PenDemographicsController implements PenDemographicsEndpoint {
   @Override
   public PenDemographics getPenDemographicsByPen(String pen) {
     log.debug("Retrieving Pen Data");
+    // pad the string with a space as it is 10 char in VMS system and it is actually 9 characters.
+    if (pen.length() < 10) {
+      pen = StringUtils.rightPad(pen, 10);
+    }
     return mapper.toStructure(getPenDemographicsService().getPenDemographicsByPen(pen));
   }
 

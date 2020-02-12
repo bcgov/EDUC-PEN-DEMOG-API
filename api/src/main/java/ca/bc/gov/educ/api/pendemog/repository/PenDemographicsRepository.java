@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface PenDemographicsRepository extends CrudRepository<PenDemographicsEntity, String> {
-  Optional<PenDemographicsEntity> findByPen(String pen);
+  Optional<PenDemographicsEntity> findByStudNo(String pen);
 }

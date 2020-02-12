@@ -21,7 +21,7 @@ public class PenDemographicsService {
   }
 
   public PenDemographicsEntity getPenDemographicsByPen(String pen) {
-    val result = getPenDemographicsRepository().findByPen(pen);
+    val result = getPenDemographicsRepository().findByStudNo(pen);
     if (result.isPresent()) {
       return result.get();
     }
