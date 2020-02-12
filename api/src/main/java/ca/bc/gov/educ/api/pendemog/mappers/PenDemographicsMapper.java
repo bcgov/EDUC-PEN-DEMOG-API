@@ -12,6 +12,13 @@ public interface PenDemographicsMapper {
   PenDemographicsMapper mapper = Mappers.getMapper(PenDemographicsMapper.class);
 
 
+  @Mapping(dateFormat = "yyyyMMdd", target = "createDate")
+  @Mapping(dateFormat = "yyyyMMdd", target = "studBirth")
   @Mapping(target = "pen", source = "studNo")
   PenDemographics toStructure(PenDemographicsEntity penDemographicsEntity);
+
+  @Mapping(dateFormat = "yyyy-MM-dd", target = "createDate")
+  @Mapping(dateFormat = "yyyy-MM-dd", target = "studBirth")
+  @Mapping(target = "studNo", source = "pen")
+  PenDemographicsEntity toModel(PenDemographics penDemographics);
 }

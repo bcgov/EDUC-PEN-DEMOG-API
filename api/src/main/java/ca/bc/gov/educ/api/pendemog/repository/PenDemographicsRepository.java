@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface PenDemographicsRepository extends CrudRepository<PenDemographicsEntity, String> {
+public interface PenDemographicsRepository extends CrudRepository<PenDemographicsEntity, String>, PenDemographicsRepositoryCustom {
   Optional<PenDemographicsEntity> findByStudNo(String pen);
 }

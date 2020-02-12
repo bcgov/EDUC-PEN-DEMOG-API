@@ -18,7 +18,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Immutable
-@Table(name = "PEN_DEMOG_VW")
+@Table(name = "PEN_DEMOG")
 public class PenDemographicsEntity {
 
   @Id
@@ -44,57 +44,18 @@ public class PenDemographicsEntity {
   private String usualMiddle;
 
   @Column(name = "STUD_BIRTH")
-  private String studBirth;
+  private Date studBirth;
 
   @Column(name = "STUD_SEX")
   private String studSex;
 
-  @Column(name = "STUD_DEMOG_CODE")
-  private String studDemogCode;
-
   @Column(name = "STUD_STATUS")
   private String studStatus;
-
-  @Column(name = "PEN_LOCAL_ID")
-  private String penLocalId;
-
-  @Column(name = "PEN_MINCODE")
-  private String penMincode;
-
-  @Column(name = "POSTAL")
-  private String postal;
-
-  @Column(name = "STUD_TRUE_NO")
-  private String studTrueNo;
-
-  @Column(name = "MERGE_TO_USER_NAME")
-  private String mergeToUserName;
-
-  @Column(name = "MERGE_TO_CODE")
-  private String mergeToCode;
 
   @Column(name = "CREATE_DATE")
   private Date createDate;
 
   @Column(name = "CREATE_USER_NAME")
   private String createUserName;
-
-  @Column(name = "UPDATE_DATE")
-  private Date updateDate;
-
-  @Column(name = "UPDATE_USER_NAME")
-  private String updateUserName;
-
-  @Column(name = "STUD_GRADE")
-  private String studGrade;
-
-  @Column(name = "STUD_GRADE_YEAR")
-  private Integer studGradeYear;
-
-  @Column(name = "UPDATE_DEMOG_DATE")
-  private Date updateDemogDate;
-
-  @Column(name = "MERGE_TO_DATE")
-  private Date mergeToDate;
 
 }
