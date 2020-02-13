@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 public class StringMapper {
 
   public String map(String value) {
-    if (StringUtils.isNotBlank(value)) {
+    if (StringUtils.isNotEmpty(value)) {
       return value.trim();
     }
     return value;
