@@ -26,7 +26,7 @@ public interface PenDemographicsEndpoint {
   @GetMapping()
   @PreAuthorize("#oauth2.hasScope('READ_PEN_DEMOGRAPHICS')")
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK")})
-  List<PenDemographics> searchPenDemographics(@Param("studSurName") String studSurName, @Param("studGiven") String studGiven, @Param("studMiddle") String studMiddle, @Param("studBirth") String studBirth, @Param("studSex") String studSex);
+  List<PenDemographics> searchPenDemographics(@Param("studSurname") String studSurname, @Param("studGiven") String studGiven, @Param("studMiddle") String studMiddle, @Param("studBirth") String studBirth, @Param("studSex") String studSex);
 
   @GetMapping("/health")
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK")})
