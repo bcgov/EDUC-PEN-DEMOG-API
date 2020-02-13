@@ -1,6 +1,7 @@
 package ca.bc.gov.educ.api.pendemog.controller;
 
 import ca.bc.gov.educ.api.pendemog.endpoint.PenDemographicsEndpoint;
+import ca.bc.gov.educ.api.pendemog.exception.InvalidParameterException;
 import ca.bc.gov.educ.api.pendemog.mappers.PenDemographicsMapper;
 import ca.bc.gov.educ.api.pendemog.service.PenDemographicsService;
 import ca.bc.gov.educ.api.pendemog.struct.PenDemographics;
@@ -12,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,7 +40,16 @@ public class PenDemographicsController implements PenDemographicsEndpoint {
   }
 
   @Override
-  public List<PenDemographics> searchPenDemographics(String studSurName, String studGiven, String studMiddle, Date studBirth, String studSex) {
+  public List<PenDemographics> searchPenDemographics(String studSurName, String studGiven, String studMiddle, String studBirth, String studSex) {
+    if (StringUtils.isNotBlank(studBirth)) {
+      try {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+        dateFormat.setLenient(false);
+        dateFormat.parse(studBirth);
+      } catch (final ParseException ex) {
+        throw new InvalidParameterException(studBirth, "Student  Date of Birth should be in yyyyMMdd format.");
+      }
+    }
     return getPenDemographicsService().searchPenDemographics(studSurName, studGiven, studMiddle, studBirth, studSex).stream().map(mapper::toStructure).collect(Collectors.toList());
   }
 

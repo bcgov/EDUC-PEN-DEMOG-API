@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -44,7 +41,7 @@ public class PenDemographicsEntity {
   private String usualMiddle;
 
   @Column(name = "STUD_BIRTH")
-  private Date studBirth;
+  private String studBirth;
 
   @Column(name = "STUD_SEX")
   private String studSex;
@@ -52,6 +49,7 @@ public class PenDemographicsEntity {
   @Column(name = "STUD_STATUS")
   private String studStatus;
 
+  @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "CREATE_DATE")
   private Date createDate;
 

@@ -65,6 +65,9 @@ public class PenDemographicsControllerTest {
       if (penDemographics.getStudSex() != null) {
         penDemographics.setStudSex(penDemographics.getStudSex().toUpperCase());
       }
+      if (penDemographics.getStudBirth() != null) {
+        penDemographics.setStudBirth(penDemographics.getStudBirth().replaceAll("-", ""));
+      }
       return mapper.toModel(penDemographics);
     }).collect(Collectors.toList()));
   }

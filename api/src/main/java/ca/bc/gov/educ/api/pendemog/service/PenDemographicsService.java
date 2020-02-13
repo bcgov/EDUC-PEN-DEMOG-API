@@ -9,7 +9,6 @@ import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -31,7 +30,7 @@ public class PenDemographicsService {
     throw new EntityNotFoundException(PenDemographicsEntity.class, "pen", pen);
   }
 
-  public List<PenDemographicsEntity> searchPenDemographics(String studSurName, String studGiven, String studMiddle, Date studBirth, String studSex) {
+  public List<PenDemographicsEntity> searchPenDemographics(String studSurName, String studGiven, String studMiddle, String studBirth, String studSex) {
     return getPenDemographicsRepository().searchPenDemographics(studSurName, studGiven, studMiddle, studBirth, studSex);
   }
 }
