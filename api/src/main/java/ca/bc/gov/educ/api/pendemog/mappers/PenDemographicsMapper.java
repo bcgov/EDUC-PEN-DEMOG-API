@@ -6,19 +6,23 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(uses = StringMapper.class)
 @SuppressWarnings("squid:S1214")
 public interface PenDemographicsMapper {
   PenDemographicsMapper mapper = Mappers.getMapper(PenDemographicsMapper.class);
 
 
-  @Mapping(dateFormat = "yyyyMMdd", target = "createDate")
-  @Mapping(dateFormat = "yyyyMMdd", target = "studBirth")
+  @Mapping(dateFormat = "yyyy-MM-dd", target = "createDate")
   @Mapping(target = "pen", source = "studNo")
   PenDemographics toStructure(PenDemographicsEntity penDemographicsEntity);
 
+  /**
+   * the toModel is only used in unit testing.
+   *
+   * @param penDemographics the struct which will be converted to entity.
+   * @return the converted entity.
+   */
   @Mapping(dateFormat = "yyyy-MM-dd", target = "createDate")
-  @Mapping(dateFormat = "yyyy-MM-dd", target = "studBirth")
   @Mapping(target = "studNo", source = "pen")
   PenDemographicsEntity toModel(PenDemographics penDemographics);
 }

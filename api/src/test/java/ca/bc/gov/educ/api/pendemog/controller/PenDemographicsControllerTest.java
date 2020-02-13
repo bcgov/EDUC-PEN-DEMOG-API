@@ -65,6 +65,9 @@ public class PenDemographicsControllerTest {
       if (penDemographics.getStudSex() != null) {
         penDemographics.setStudSex(penDemographics.getStudSex().toUpperCase());
       }
+      if (penDemographics.getStudBirth() != null) {
+        penDemographics.setStudBirth(penDemographics.getStudBirth().replaceAll("-", ""));
+      }
       return mapper.toModel(penDemographics);
     }).collect(Collectors.toList()));
   }
@@ -134,6 +137,15 @@ public class PenDemographicsControllerTest {
   public void testSearchPenDemographics_GivenWrongFormatDOBInQueryParam_ShouldReturnStatusBadRequest() throws Exception {
 
     this.mvc.perform(get("/?studBirth=2001-05-19")
+            .accept(MediaType.APPLICATION_JSON)).andDo(print())
+            .andExpect(status().isBadRequest());
+  }
+
+  @Test
+  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
+  public void testSearchPenDemographics2_GivenWrongFormatDOBInQueryParam_ShouldReturnStatusBadRequest() throws Exception {
+
+    this.mvc.perform(get("/?studBirth=00000000")
             .accept(MediaType.APPLICATION_JSON)).andDo(print())
             .andExpect(status().isBadRequest());
   }

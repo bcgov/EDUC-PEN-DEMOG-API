@@ -14,7 +14,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -29,7 +28,7 @@ public class PenDemographicsRepositoryCustomImpl implements PenDemographicsRepos
   }
 
   @Override
-  public List<PenDemographicsEntity> searchPenDemographics(String studSurName, String studGiven, String studMiddle, Date studBirth, String studSex) {
+  public List<PenDemographicsEntity> searchPenDemographics(String studSurName, String studGiven, String studMiddle, String studBirth, String studSex) {
     final List<Predicate> predicates = new ArrayList<>();
     final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
     final CriteriaQuery<PenDemographicsEntity> criteriaQuery = criteriaBuilder.createQuery(PenDemographicsEntity.class);
