@@ -49,7 +49,7 @@ pipeline{
       TEST = 'c2mvws-test'
       PROD = 'c2mvws-prod'
 
-      REPO_NAME = 'EDUC-PEN-DEMOG-API'
+      REPO_NAME = 'educ-pen-demog-api'
       OWNER = 'bcgov'
       JOB_NAME = 'master'
       TAG = 'dev'
@@ -107,7 +107,7 @@ pipeline{
       steps {
         script {
           openshift.withCluster() {
-            openshift.selector("bc", "${REPO_NAME}-${JOB_NAME}").startBuild("--from-file=./api/target/penrequest-api-${VERSION}.jar", "--wait")
+            openshift.selector("bc", "${REPO_NAME}-${JOB_NAME}").startBuild("--from-file=./api/target/pendemog-api-${VERSION}.jar", "--wait")
           }
         }
       }
