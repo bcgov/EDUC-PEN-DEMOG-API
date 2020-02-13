@@ -141,4 +141,13 @@ public class PenDemographicsControllerTest {
             .andExpect(status().isBadRequest());
   }
 
+  @Test
+  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
+  public void testSearchPenDemographics2_GivenWrongFormatDOBInQueryParam_ShouldReturnStatusBadRequest() throws Exception {
+
+    this.mvc.perform(get("/?studBirth=00000000")
+            .accept(MediaType.APPLICATION_JSON)).andDo(print())
+            .andExpect(status().isBadRequest());
+  }
+
 }
