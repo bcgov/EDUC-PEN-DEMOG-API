@@ -74,6 +74,8 @@ objects:
   - apiVersion: v1
     kind: Service
     metadata:
+      annotations:
+        service.alpha.openshift.io/serving-cert-secret-name: "pen-demog-api-cert"
       labels:
         app: "${APP_NAME}-${JOB_NAME}"
       name: "${APP_NAME}-${JOB_NAME}"
@@ -88,8 +90,6 @@ objects:
   - apiVersion: v1
     kind: Route
     metadata:
-      annotations:
-        service.alpha.openshift.io/serving-cert-secret-name: "pen-demog-api-cert"
       labels:
         app: "${APP_NAME}-${JOB_NAME}"
       name: "${APP_NAME}-${JOB_NAME}"
