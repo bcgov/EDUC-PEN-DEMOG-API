@@ -7,7 +7,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-10-13",
-    "createUserName": "Jaquelin Fratczak"
+    "createUserName": "Jaquelin Fratczak",
+    "studMiddle": null
   },
   {
     "pen": 2348845626,
@@ -17,7 +18,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-10-21",
-    "createUserName": "Candice O'Brien"
+    "createUserName": "Candice O'Brien",
+    "studMiddle": null
   },
   {
     "pen": 3222327260,
@@ -27,7 +29,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-11-23",
-    "createUserName": "Madelle Lates"
+    "createUserName": "Madelle Lates",
+    "studMiddle": null
   },
   {
     "pen": 1914891244,
@@ -37,7 +40,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2020-01-19",
-    "createUserName": "Frankie Witton"
+    "createUserName": "Frankie Witton",
+    "studMiddle": null
   },
   {
     "pen": 3395340943,
@@ -47,7 +51,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-03-22",
-    "createUserName": "Feliza Lester"
+    "createUserName": "Feliza Lester",
+    "studMiddle": null
   },
   {
     "pen": 6007037977,
@@ -57,7 +62,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-03-13",
-    "createUserName": "Toiboid Real"
+    "createUserName": "Toiboid Real",
+    "studMiddle": null
   },
   {
     "pen": 3754024039,
@@ -67,7 +73,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-07-11",
-    "createUserName": "Nikita Burlay"
+    "createUserName": "Nikita Burlay",
+    "studMiddle": null
   },
   {
     "pen": 8995749694,
@@ -77,7 +84,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-09-01",
-    "createUserName": "Garnette Heaker"
+    "createUserName": "Garnette Heaker",
+    "studMiddle": null
   },
   {
     "pen": 1520844469,
@@ -87,7 +95,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-10-24",
-    "createUserName": "Felizio Scalia"
+    "createUserName": "Felizio Scalia",
+    "studMiddle": null
   },
   {
     "pen": 2426543779,
@@ -97,7 +106,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-08-01",
-    "createUserName": "Cahra Buxy"
+    "createUserName": "Cahra Buxy",
+    "studMiddle": null
   },
   {
     "pen": 6822755983,
@@ -107,7 +117,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-09-15",
-    "createUserName": "Heriberto Hawler"
+    "createUserName": "Heriberto Hawler",
+    "studMiddle": null
   },
   {
     "pen": 6513888032,
@@ -117,7 +128,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2020-01-19",
-    "createUserName": "Liam Chiese"
+    "createUserName": "Liam Chiese",
+    "studMiddle": null
   },
   {
     "pen": 4413776338,
@@ -127,7 +139,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-08-14",
-    "createUserName": "Francklyn Bonniface"
+    "createUserName": "Francklyn Bonniface",
+    "studMiddle": null
   },
   {
     "pen": 5463126273,
@@ -137,7 +150,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-08-08",
-    "createUserName": "Marje Dootson"
+    "createUserName": "Marje Dootson",
+    "studMiddle": null
   },
   {
     "pen": 8643703314,
@@ -147,7 +161,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2020-02-03",
-    "createUserName": "Kandace Blampied"
+    "createUserName": "Kandace Blampied",
+    "studMiddle": null
   },
   {
     "pen": 1391560128,
@@ -157,7 +172,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-08-06",
-    "createUserName": "Bradly Braitling"
+    "createUserName": "Bradly Braitling",
+    "studMiddle": null
   },
   {
     "pen": 1011546781,
@@ -167,7 +183,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-06-23",
-    "createUserName": "Antonino Hugli"
+    "createUserName": "Antonino Hugli",
+    "studMiddle": null
   },
   {
     "pen": 1739857531,
@@ -177,7 +194,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-12-16",
-    "createUserName": "Antoni Midlane"
+    "createUserName": "Antoni Midlane",
+    "studMiddle": null
   },
   {
     "pen": 2674595097,
@@ -187,7 +205,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-06-21",
-    "createUserName": "Dugald Grinter"
+    "createUserName": "Dugald Grinter",
+    "studMiddle": null
   },
   {
     "pen": 3359244679,
@@ -197,7 +216,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-04-01",
-    "createUserName": "Pryce Bulle"
+    "createUserName": "Pryce Bulle",
+    "studMiddle": null
   },
   {
     "pen": 6787852600,
@@ -207,7 +227,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-08-18",
-    "createUserName": "Dorothy Zywicki"
+    "createUserName": "Dorothy Zywicki",
+    "studMiddle": null
   },
   {
     "pen": 8072274519,
@@ -217,7 +238,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-12-10",
-    "createUserName": "Meier Ramirez"
+    "createUserName": "Meier Ramirez",
+    "studMiddle": null
   },
   {
     "pen": 1152475786,
@@ -227,7 +249,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2020-01-27",
-    "createUserName": "Ramsay Corbert"
+    "createUserName": "Ramsay Corbert",
+    "studMiddle": null
   },
   {
     "pen": 8495556515,
@@ -237,7 +260,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-12-02",
-    "createUserName": "Petra Beert"
+    "createUserName": "Petra Beert",
+    "studMiddle": null
   },
   {
     "pen": 1906670352,
@@ -247,7 +271,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-12-05",
-    "createUserName": "Cordula Haisell"
+    "createUserName": "Cordula Haisell",
+    "studMiddle": null
   },
   {
     "pen": 4979234343,
@@ -257,7 +282,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-08-07",
-    "createUserName": "Ximenez Dring"
+    "createUserName": "Ximenez Dring",
+    "studMiddle": null
   },
   {
     "pen": 5746484849,
@@ -267,7 +293,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2020-01-18",
-    "createUserName": "Hyacinth Dickon"
+    "createUserName": "Hyacinth Dickon",
+    "studMiddle": null
   },
   {
     "pen": 5346683751,
@@ -277,7 +304,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-04-08",
-    "createUserName": "Sarajane Lebbon"
+    "createUserName": "Sarajane Lebbon",
+    "studMiddle": null
   },
   {
     "pen": 4552415031,
@@ -287,7 +315,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-10-15",
-    "createUserName": "Clemmie Nazer"
+    "createUserName": "Clemmie Nazer",
+    "studMiddle": null
   },
   {
     "pen": 1022361113,
@@ -297,7 +326,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-12-25",
-    "createUserName": "Didi Giacomasso"
+    "createUserName": "Didi Giacomasso",
+    "studMiddle": null
   },
   {
     "pen": 7615220573,
@@ -307,7 +337,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-11-09",
-    "createUserName": "April Matzeitis"
+    "createUserName": "April Matzeitis",
+    "studMiddle": null
   },
   {
     "pen": 7871013746,
@@ -317,7 +348,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-11-07",
-    "createUserName": "Sawyer Eary"
+    "createUserName": "Sawyer Eary",
+    "studMiddle": null
   },
   {
     "pen": 4274155125,
@@ -327,7 +359,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-11-05",
-    "createUserName": "Brina Buard"
+    "createUserName": "Brina Buard",
+    "studMiddle": null
   },
   {
     "pen": 4102765722,
@@ -337,7 +370,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-06-09",
-    "createUserName": "Hewe Dulake"
+    "createUserName": "Hewe Dulake",
+    "studMiddle": null
   },
   {
     "pen": 8842945070,
@@ -347,7 +381,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-10-26",
-    "createUserName": "Merry Chaperling"
+    "createUserName": "Merry Chaperling",
+    "studMiddle": null
   },
   {
     "pen": 8231594800,
@@ -357,7 +392,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-09-15",
-    "createUserName": "Elsey Burrill"
+    "createUserName": "Elsey Burrill",
+    "studMiddle": null
   },
   {
     "pen": 3016574613,
@@ -367,7 +403,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-06-30",
-    "createUserName": "Ignace Jenks"
+    "createUserName": "Ignace Jenks",
+    "studMiddle": null
   },
   {
     "pen": 4582943687,
@@ -377,7 +414,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-05-07",
-    "createUserName": "Cletus Remmers"
+    "createUserName": "Cletus Remmers",
+    "studMiddle": null
   },
   {
     "pen": 7338860858,
@@ -387,7 +425,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-04-23",
-    "createUserName": "Guenna Eblein"
+    "createUserName": "Guenna Eblein",
+    "studMiddle": null
   },
   {
     "pen": 7421489767,
@@ -397,7 +436,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-09-18",
-    "createUserName": "Lita Adelsberg"
+    "createUserName": "Lita Adelsberg",
+    "studMiddle": null
   },
   {
     "pen": 5368908706,
@@ -407,7 +447,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-06-25",
-    "createUserName": "Ara Greensall"
+    "createUserName": "Ara Greensall",
+    "studMiddle": null
   },
   {
     "pen": 1464820965,
@@ -417,7 +458,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-08-30",
-    "createUserName": "Daveta Smillie"
+    "createUserName": "Daveta Smillie",
+    "studMiddle": null
   },
   {
     "pen": 7920915739,
@@ -427,7 +469,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-10-05",
-    "createUserName": "Regine Gurnee"
+    "createUserName": "Regine Gurnee",
+    "studMiddle": null
   },
   {
     "pen": 6191321676,
@@ -437,7 +480,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-12-12",
-    "createUserName": "Gregorius Tabbitt"
+    "createUserName": "Gregorius Tabbitt",
+    "studMiddle": null
   },
   {
     "pen": 2985226122,
@@ -447,7 +491,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-09-06",
-    "createUserName": "Stanleigh Farfalameev"
+    "createUserName": "Stanleigh Farfalameev",
+    "studMiddle": null
   },
   {
     "pen": 8218349501,
@@ -457,7 +502,8 @@
     "studSex": "Female",
     "studStatus": "L",
     "createDate": "2020-01-07",
-    "createUserName": "Catharina Sesons"
+    "createUserName": "Catharina Sesons",
+    "studMiddle": null
   },
   {
     "pen": 8778956032,
@@ -467,7 +513,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2020-02-09",
-    "createUserName": "Hobie Wolseley"
+    "createUserName": "Hobie Wolseley",
+    "studMiddle": null
   },
   {
     "pen": 1971285467,
@@ -477,7 +524,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-05-03",
-    "createUserName": "Haleigh Chiommienti"
+    "createUserName": "Haleigh Chiommienti",
+    "studMiddle": null
   },
   {
     "pen": 2690759083,
@@ -487,7 +535,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-05-30",
-    "createUserName": "Claire Goldsby"
+    "createUserName": "Claire Goldsby",
+    "studMiddle": null
   },
   {
     "pen": 8176086264,
@@ -497,7 +546,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-08-22",
-    "createUserName": "Dugald McCaghan"
+    "createUserName": "Dugald McCaghan",
+    "studMiddle": null
   },
   {
     "pen": 1707365687,
@@ -507,7 +557,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-07-10",
-    "createUserName": "Diego Deave"
+    "createUserName": "Diego Deave",
+    "studMiddle": null
   },
   {
     "pen": 2541902088,
@@ -517,7 +568,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-05-02",
-    "createUserName": "Georas Kenen"
+    "createUserName": "Georas Kenen",
+    "studMiddle": null
   },
   {
     "pen": 7869262562,
@@ -527,7 +579,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-08-16",
-    "createUserName": "Emmett Yallowley"
+    "createUserName": "Emmett Yallowley",
+    "studMiddle": null
   },
   {
     "pen": 4331255882,
@@ -537,7 +590,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-03-18",
-    "createUserName": "Charo Kirrens"
+    "createUserName": "Charo Kirrens",
+    "studMiddle": null
   },
   {
     "pen": 5097573084,
@@ -547,7 +601,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-04-18",
-    "createUserName": "Sigismond Stothart"
+    "createUserName": "Sigismond Stothart",
+    "studMiddle": null
   },
   {
     "pen": 7676941491,
@@ -557,7 +612,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-02-18",
-    "createUserName": "Drusilla Merrien"
+    "createUserName": "Drusilla Merrien",
+    "studMiddle": null
   },
   {
     "pen": 2209261770,
@@ -567,7 +623,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-09-06",
-    "createUserName": "Tamra Speechly"
+    "createUserName": "Tamra Speechly",
+    "studMiddle": null
   },
   {
     "pen": 7580082354,
@@ -577,7 +634,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-10-29",
-    "createUserName": "Base Pointer"
+    "createUserName": "Base Pointer",
+    "studMiddle": null
   },
   {
     "pen": 2312770581,
@@ -587,7 +645,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-12-02",
-    "createUserName": "Edyth Moon"
+    "createUserName": "Edyth Moon",
+    "studMiddle": null
   },
   {
     "pen": 2919905723,
@@ -597,7 +656,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-09-18",
-    "createUserName": "Norri Pargeter"
+    "createUserName": "Norri Pargeter",
+    "studMiddle": null
   },
   {
     "pen": 8322151114,
@@ -607,7 +667,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-12-07",
-    "createUserName": "Alisander Shird"
+    "createUserName": "Alisander Shird",
+    "studMiddle": null
   },
   {
     "pen": 6008477269,
@@ -617,7 +678,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2020-01-13",
-    "createUserName": "Angelita Tomik"
+    "createUserName": "Angelita Tomik",
+    "studMiddle": null
   },
   {
     "pen": 2771929647,
@@ -627,7 +689,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-05-15",
-    "createUserName": "Aaron Sturr"
+    "createUserName": "Aaron Sturr",
+    "studMiddle": null
   },
   {
     "pen": 4002925480,
@@ -637,7 +700,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-10-28",
-    "createUserName": "Gabe De Ath"
+    "createUserName": "Gabe De Ath",
+    "studMiddle": null
   },
   {
     "pen": 7043240268,
@@ -647,7 +711,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-05-20",
-    "createUserName": "Bruno Ottery"
+    "createUserName": "Bruno Ottery",
+    "studMiddle": null
   },
   {
     "pen": 1962031461,
@@ -657,7 +722,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-12-17",
-    "createUserName": "Pooh Cuardall"
+    "createUserName": "Pooh Cuardall",
+    "studMiddle": null
   },
   {
     "pen": 7275232255,
@@ -667,7 +733,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-10-02",
-    "createUserName": "Igor Taleworth"
+    "createUserName": "Igor Taleworth",
+    "studMiddle": null
   },
   {
     "pen": 8177401671,
@@ -677,7 +744,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-11-12",
-    "createUserName": "Suzi Jeskins"
+    "createUserName": "Suzi Jeskins",
+    "studMiddle": null
   },
   {
     "pen": 2734873963,
@@ -687,7 +755,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-04-26",
-    "createUserName": "Cyb Dmisek"
+    "createUserName": "Cyb Dmisek",
+    "studMiddle": null
   },
   {
     "pen": 7828433746,
@@ -697,7 +766,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-02-28",
-    "createUserName": "Anabelle Newtown"
+    "createUserName": "Anabelle Newtown",
+    "studMiddle": null
   },
   {
     "pen": 2702676554,
@@ -707,7 +777,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-12-19",
-    "createUserName": "Katya Kennler"
+    "createUserName": "Katya Kennler",
+    "studMiddle": null
   },
   {
     "pen": 7751176370,
@@ -717,7 +788,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-07-22",
-    "createUserName": "Maxwell Selway"
+    "createUserName": "Maxwell Selway",
+    "studMiddle": null
   },
   {
     "pen": 6533206738,
@@ -727,7 +799,8 @@
     "studSex": "Female",
     "studStatus": "L",
     "createDate": "2019-06-03",
-    "createUserName": "Camille Corhard"
+    "createUserName": "Camille Corhard",
+    "studMiddle": null
   },
   {
     "pen": 3084460178,
@@ -737,7 +810,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-11-21",
-    "createUserName": "Cleveland Shortan"
+    "createUserName": "Cleveland Shortan",
+    "studMiddle": null
   },
   {
     "pen": 8104820061,
@@ -747,7 +821,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-12-22",
-    "createUserName": "Pollyanna Valder"
+    "createUserName": "Pollyanna Valder",
+    "studMiddle": null
   },
   {
     "pen": 3999745048,
@@ -757,7 +832,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-09-07",
-    "createUserName": "Herold Harfoot"
+    "createUserName": "Herold Harfoot",
+    "studMiddle": null
   },
   {
     "pen": 5537524331,
@@ -767,7 +843,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-11-17",
-    "createUserName": "Tammie Proctor"
+    "createUserName": "Tammie Proctor",
+    "studMiddle": null
   },
   {
     "pen": 5058983728,
@@ -777,7 +854,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-05-06",
-    "createUserName": "Kalil Munnion"
+    "createUserName": "Kalil Munnion",
+    "studMiddle": null
   },
   {
     "pen": 5152955048,
@@ -787,7 +865,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-03-19",
-    "createUserName": "Benedict Tressler"
+    "createUserName": "Benedict Tressler",
+    "studMiddle": null
   },
   {
     "pen": 8679640973,
@@ -797,7 +876,8 @@
     "studSex": "Female",
     "studStatus": "L",
     "createDate": "2019-05-10",
-    "createUserName": "Merry Andreutti"
+    "createUserName": "Merry Andreutti",
+    "studMiddle": null
   },
   {
     "pen": 7745130177,
@@ -807,7 +887,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-02-17",
-    "createUserName": "Dirk Kerwin"
+    "createUserName": "Dirk Kerwin",
+    "studMiddle": null
   },
   {
     "pen": 7107717167,
@@ -817,7 +898,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-02-13",
-    "createUserName": "Papageno Pottiphar"
+    "createUserName": "Papageno Pottiphar",
+    "studMiddle": null
   },
   {
     "pen": 2979363977,
@@ -827,7 +909,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-10-04",
-    "createUserName": "Jeramie Ferrea"
+    "createUserName": "Jeramie Ferrea",
+    "studMiddle": null
   },
   {
     "pen": 1422774238,
@@ -837,7 +920,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-09-03",
-    "createUserName": "Vergil Sille"
+    "createUserName": "Vergil Sille",
+    "studMiddle": null
   },
   {
     "pen": 5005829826,
@@ -847,7 +931,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-10-01",
-    "createUserName": "Lydie Hartup"
+    "createUserName": "Lydie Hartup",
+    "studMiddle": null
   },
   {
     "pen": 2907898028,
@@ -857,7 +942,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-05-11",
-    "createUserName": "Cherise Epine"
+    "createUserName": "Cherise Epine",
+    "studMiddle": null
   },
   {
     "pen": 8319380163,
@@ -867,7 +953,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-08-09",
-    "createUserName": "Adriaens Edmans"
+    "createUserName": "Adriaens Edmans",
+    "studMiddle": null
   },
   {
     "pen": 2723767084,
@@ -877,7 +964,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-07-07",
-    "createUserName": "Alistair Edden"
+    "createUserName": "Alistair Edden",
+    "studMiddle": null
   },
   {
     "pen": 7638956086,
@@ -887,7 +975,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2020-01-07",
-    "createUserName": "Paolo Matthias"
+    "createUserName": "Paolo Matthias",
+    "studMiddle": null
   },
   {
     "pen": 8021439700,
@@ -897,7 +986,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-08-26",
-    "createUserName": "Mattias Fridd"
+    "createUserName": "Mattias Fridd",
+    "studMiddle": null
   },
   {
     "pen": 7764787728,
@@ -907,7 +997,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-11-10",
-    "createUserName": "Flora Staddom"
+    "createUserName": "Flora Staddom",
+    "studMiddle": null
   },
   {
     "pen": 7621580679,
@@ -917,7 +1008,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-11-26",
-    "createUserName": "Judith Wimpress"
+    "createUserName": "Judith Wimpress",
+    "studMiddle": null
   },
   {
     "pen": 2111055941,
@@ -927,7 +1019,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-02-19",
-    "createUserName": "Guthrey Petticrew"
+    "createUserName": "Guthrey Petticrew",
+    "studMiddle": null
   },
   {
     "pen": 7169725759,
@@ -937,7 +1030,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-10-05",
-    "createUserName": "Federico Garrick"
+    "createUserName": "Federico Garrick",
+    "studMiddle": null
   },
   {
     "pen": 4651090453,
@@ -947,7 +1041,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-12-01",
-    "createUserName": "Emylee Ketcher"
+    "createUserName": "Emylee Ketcher",
+    "studMiddle": null
   },
   {
     "pen": 8659792318,
@@ -957,7 +1052,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-07-28",
-    "createUserName": "Devin Gormley"
+    "createUserName": "Devin Gormley",
+    "studMiddle": null
   },
   {
     "pen": 3651325149,
@@ -967,7 +1063,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2020-02-09",
-    "createUserName": "Mac Woodthorpe"
+    "createUserName": "Mac Woodthorpe",
+    "studMiddle": null
   },
   {
     "pen": 1314140601,
@@ -977,7 +1074,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-07-25",
-    "createUserName": "Christos Custance"
+    "createUserName": "Christos Custance",
+    "studMiddle": null
   },
   {
     "pen": 6066924803,
@@ -987,7 +1085,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-10-09",
-    "createUserName": "Man Dory"
+    "createUserName": "Man Dory",
+    "studMiddle": null
   },
   {
     "pen": 5582374068,
@@ -997,7 +1096,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-03-28",
-    "createUserName": "Darius Pantone"
+    "createUserName": "Darius Pantone",
+    "studMiddle": null
   },
   {
     "pen": 3289152660,
@@ -1007,7 +1107,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2020-02-05",
-    "createUserName": "Brion Burl"
+    "createUserName": "Brion Burl",
+    "studMiddle": null
   },
   {
     "pen": 2939664005,
@@ -1017,7 +1118,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2020-01-11",
-    "createUserName": "Cleveland Le Floch"
+    "createUserName": "Cleveland Le Floch",
+    "studMiddle": null
   },
   {
     "pen": 1125699516,
@@ -1027,7 +1129,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-11-13",
-    "createUserName": "Rhoda Gynni"
+    "createUserName": "Rhoda Gynni",
+    "studMiddle": null
   },
   {
     "pen": 8095237774,
@@ -1037,7 +1140,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-06-18",
-    "createUserName": "Prudi Beedom"
+    "createUserName": "Prudi Beedom",
+    "studMiddle": null
   },
   {
     "pen": 6423244221,
@@ -1047,7 +1151,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-10-03",
-    "createUserName": "Arne Leil"
+    "createUserName": "Arne Leil",
+    "studMiddle": null
   },
   {
     "pen": 5897734765,
@@ -1057,7 +1162,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-11-15",
-    "createUserName": "Lefty Plevin"
+    "createUserName": "Lefty Plevin",
+    "studMiddle": null
   },
   {
     "pen": 1864536161,
@@ -1067,7 +1173,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-08-06",
-    "createUserName": "Lotti Brehat"
+    "createUserName": "Lotti Brehat",
+    "studMiddle": null
   },
   {
     "pen": 6210947802,
@@ -1077,7 +1184,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-12-24",
-    "createUserName": "Isa Starking"
+    "createUserName": "Isa Starking",
+    "studMiddle": null
   },
   {
     "pen": 5658544641,
@@ -1087,7 +1195,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-06-16",
-    "createUserName": "Melitta Skoggings"
+    "createUserName": "Melitta Skoggings",
+    "studMiddle": null
   },
   {
     "pen": 8897075534,
@@ -1097,7 +1206,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-09-16",
-    "createUserName": "Somerset Firminger"
+    "createUserName": "Somerset Firminger",
+    "studMiddle": null
   },
   {
     "pen": 2748333324,
@@ -1107,7 +1217,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2020-01-24",
-    "createUserName": "Neddy Aynscombe"
+    "createUserName": "Neddy Aynscombe",
+    "studMiddle": null
   },
   {
     "pen": 3409711963,
@@ -1117,7 +1228,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-07-22",
-    "createUserName": "Marijo Hallan"
+    "createUserName": "Marijo Hallan",
+    "studMiddle": null
   },
   {
     "pen": 6058817465,
@@ -1127,7 +1239,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-07-27",
-    "createUserName": "Norbert Aronowitz"
+    "createUserName": "Norbert Aronowitz",
+    "studMiddle": null
   },
   {
     "pen": 4664999639,
@@ -1137,7 +1250,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-07-08",
-    "createUserName": "Zacharia Cicchitello"
+    "createUserName": "Zacharia Cicchitello",
+    "studMiddle": null
   },
   {
     "pen": 6410113082,
@@ -1147,7 +1261,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2020-01-08",
-    "createUserName": "Laurel Fookes"
+    "createUserName": "Laurel Fookes",
+    "studMiddle": null
   },
   {
     "pen": 6468856335,
@@ -1157,7 +1272,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-10-06",
-    "createUserName": "Irena Keri"
+    "createUserName": "Irena Keri",
+    "studMiddle": null
   },
   {
     "pen": 2116395834,
@@ -1167,7 +1283,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-05-03",
-    "createUserName": "Jenn Cawsy"
+    "createUserName": "Jenn Cawsy",
+    "studMiddle": null
   },
   {
     "pen": 3161913839,
@@ -1177,7 +1294,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-04-11",
-    "createUserName": "Liesa Lightbody"
+    "createUserName": "Liesa Lightbody",
+    "studMiddle": null
   },
   {
     "pen": 7046351733,
@@ -1187,7 +1305,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-09-23",
-    "createUserName": "Ruggiero Puckinghorne"
+    "createUserName": "Ruggiero Puckinghorne",
+    "studMiddle": null
   },
   {
     "pen": 6328385451,
@@ -1197,7 +1316,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-11-12",
-    "createUserName": "Colene Confort"
+    "createUserName": "Colene Confort",
+    "studMiddle": null
   },
   {
     "pen": 4344586463,
@@ -1207,7 +1327,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-06-30",
-    "createUserName": "Stavros McQuade"
+    "createUserName": "Stavros McQuade",
+    "studMiddle": null
   },
   {
     "pen": 4691726566,
@@ -1217,7 +1338,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-07-04",
-    "createUserName": "Nolana Mixhel"
+    "createUserName": "Nolana Mixhel",
+    "studMiddle": null
   },
   {
     "pen": 5513535169,
@@ -1227,7 +1349,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-04-04",
-    "createUserName": "Ram Screas"
+    "createUserName": "Ram Screas",
+    "studMiddle": null
   },
   {
     "pen": 8180648767,
@@ -1237,7 +1360,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-03-06",
-    "createUserName": "Parke Peasee"
+    "createUserName": "Parke Peasee",
+    "studMiddle": null
   },
   {
     "pen": 6078213029,
@@ -1247,7 +1371,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-07-09",
-    "createUserName": "Dolf Pasticznyk"
+    "createUserName": "Dolf Pasticznyk",
+    "studMiddle": null
   },
   {
     "pen": 3627954791,
@@ -1257,7 +1382,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-06-09",
-    "createUserName": "Maximo Ancell"
+    "createUserName": "Maximo Ancell",
+    "studMiddle": null
   },
   {
     "pen": 5779674703,
@@ -1267,7 +1393,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-04-24",
-    "createUserName": "Derwin Denekamp"
+    "createUserName": "Derwin Denekamp",
+    "studMiddle": null
   },
   {
     "pen": 6157321086,
@@ -1277,7 +1404,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-11-10",
-    "createUserName": "Putnem Philippet"
+    "createUserName": "Putnem Philippet",
+    "studMiddle": null
   },
   {
     "pen": 4099121900,
@@ -1287,7 +1415,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-03-06",
-    "createUserName": "Lorrin Frome"
+    "createUserName": "Lorrin Frome",
+    "studMiddle": null
   },
   {
     "pen": 2674574067,
@@ -1297,7 +1426,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-06-22",
-    "createUserName": "Suzanna Gatsby"
+    "createUserName": "Suzanna Gatsby",
+    "studMiddle": null
   },
   {
     "pen": 4637448798,
@@ -1307,7 +1437,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-09-30",
-    "createUserName": "Gaultiero Zima"
+    "createUserName": "Gaultiero Zima",
+    "studMiddle": null
   },
   {
     "pen": 5481933403,
@@ -1317,7 +1448,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-04-18",
-    "createUserName": "Conny Coneron"
+    "createUserName": "Conny Coneron",
+    "studMiddle": null
   },
   {
     "pen": 8697587595,
@@ -1327,7 +1459,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-10-21",
-    "createUserName": "Iago Aaronson"
+    "createUserName": "Iago Aaronson",
+    "studMiddle": null
   },
   {
     "pen": 4614016584,
@@ -1337,7 +1470,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-08-20",
-    "createUserName": "Aleen Beisley"
+    "createUserName": "Aleen Beisley",
+    "studMiddle": null
   },
   {
     "pen": 2366999974,
@@ -1347,7 +1481,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-09-01",
-    "createUserName": "Filippa Millions"
+    "createUserName": "Filippa Millions",
+    "studMiddle": null
   },
   {
     "pen": 8197175810,
@@ -1357,7 +1492,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-09-11",
-    "createUserName": "Del Caudell"
+    "createUserName": "Del Caudell",
+    "studMiddle": null
   },
   {
     "pen": 2898945455,
@@ -1367,7 +1503,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-04-17",
-    "createUserName": "Egor Schiell"
+    "createUserName": "Egor Schiell",
+    "studMiddle": null
   },
   {
     "pen": 5321708500,
@@ -1377,7 +1514,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-08-23",
-    "createUserName": "Bee Prewer"
+    "createUserName": "Bee Prewer",
+    "studMiddle": null
   },
   {
     "pen": 6772153621,
@@ -1387,7 +1525,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2020-01-20",
-    "createUserName": "Nathanael Spaducci"
+    "createUserName": "Nathanael Spaducci",
+    "studMiddle": null
   },
   {
     "pen": 1685761578,
@@ -1397,7 +1536,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-09-11",
-    "createUserName": "Faber Bonafacino"
+    "createUserName": "Faber Bonafacino",
+    "studMiddle": null
   },
   {
     "pen": 8774143138,
@@ -1407,7 +1547,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-08-07",
-    "createUserName": "Oswald Ruger"
+    "createUserName": "Oswald Ruger",
+    "studMiddle": null
   },
   {
     "pen": 5716581091,
@@ -1417,7 +1558,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-10-08",
-    "createUserName": "Levey Crutcher"
+    "createUserName": "Levey Crutcher",
+    "studMiddle": null
   },
   {
     "pen": 1228167526,
@@ -1427,7 +1569,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-07-20",
-    "createUserName": "Maxy Jeffcoate"
+    "createUserName": "Maxy Jeffcoate",
+    "studMiddle": null
   },
   {
     "pen": 5525065607,
@@ -1437,7 +1580,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2020-01-17",
-    "createUserName": "Sileas Reignould"
+    "createUserName": "Sileas Reignould",
+    "studMiddle": null
   },
   {
     "pen": 3172087986,
@@ -1447,7 +1591,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2020-02-08",
-    "createUserName": "Reynold Doreward"
+    "createUserName": "Reynold Doreward",
+    "studMiddle": null
   },
   {
     "pen": 5553054755,
@@ -1457,7 +1602,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2020-01-18",
-    "createUserName": "Georgena Bofield"
+    "createUserName": "Georgena Bofield",
+    "studMiddle": null
   },
   {
     "pen": 8364925640,
@@ -1467,7 +1613,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-05-31",
-    "createUserName": "Nathalia Truwert"
+    "createUserName": "Nathalia Truwert",
+    "studMiddle": null
   },
   {
     "pen": 6977160993,
@@ -1477,7 +1624,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-09-09",
-    "createUserName": "Amalie Tumber"
+    "createUserName": "Amalie Tumber",
+    "studMiddle": null
   },
   {
     "pen": 7464942801,
@@ -1487,7 +1635,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-10-20",
-    "createUserName": "Evaleen Gennrich"
+    "createUserName": "Evaleen Gennrich",
+    "studMiddle": null
   },
   {
     "pen": 1479212854,
@@ -1497,7 +1646,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-07-22",
-    "createUserName": "Jenni Lippitt"
+    "createUserName": "Jenni Lippitt",
+    "studMiddle": null
   },
   {
     "pen": 3429927802,
@@ -1507,7 +1657,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-12-24",
-    "createUserName": "Morganica Shercliff"
+    "createUserName": "Morganica Shercliff",
+    "studMiddle": null
   },
   {
     "pen": 3430020031,
@@ -1517,7 +1668,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-11-17",
-    "createUserName": "Russ Monckman"
+    "createUserName": "Russ Monckman",
+    "studMiddle": null
   },
   {
     "pen": 2500961471,
@@ -1527,7 +1679,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-09-18",
-    "createUserName": "Chickie Itzkov"
+    "createUserName": "Chickie Itzkov",
+    "studMiddle": null
   },
   {
     "pen": 5173226860,
@@ -1537,7 +1690,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2020-01-31",
-    "createUserName": "Chaim Warret"
+    "createUserName": "Chaim Warret",
+    "studMiddle": null
   },
   {
     "pen": 5825783818,
@@ -1547,7 +1701,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-10-12",
-    "createUserName": "Patrizia Halsey"
+    "createUserName": "Patrizia Halsey",
+    "studMiddle": null
   },
   {
     "pen": 1429808131,
@@ -1557,7 +1712,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-11-20",
-    "createUserName": "Caresse Codrington"
+    "createUserName": "Caresse Codrington",
+    "studMiddle": null
   },
   {
     "pen": 1019477688,
@@ -1567,7 +1723,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-07-23",
-    "createUserName": "Nikolaos Penrith"
+    "createUserName": "Nikolaos Penrith",
+    "studMiddle": null
   },
   {
     "pen": 6693712709,
@@ -1577,7 +1734,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-03-31",
-    "createUserName": "Mischa Martine"
+    "createUserName": "Mischa Martine",
+    "studMiddle": null
   },
   {
     "pen": 7506578702,
@@ -1587,7 +1745,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-05-09",
-    "createUserName": "Douglas Staziker"
+    "createUserName": "Douglas Staziker",
+    "studMiddle": null
   },
   {
     "pen": 5604447737,
@@ -1597,7 +1756,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-02-23",
-    "createUserName": "Moreen Nerne"
+    "createUserName": "Moreen Nerne",
+    "studMiddle": null
   },
   {
     "pen": 8446051284,
@@ -1607,7 +1767,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-09-20",
-    "createUserName": "Harwilll Elintune"
+    "createUserName": "Harwilll Elintune",
+    "studMiddle": null
   },
   {
     "pen": 5519149747,
@@ -1617,7 +1778,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-09-15",
-    "createUserName": "Silvan Ughetti"
+    "createUserName": "Silvan Ughetti",
+    "studMiddle": null
   },
   {
     "pen": 2231180550,
@@ -1627,7 +1789,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-03-09",
-    "createUserName": "Hercule Rotherham"
+    "createUserName": "Hercule Rotherham",
+    "studMiddle": null
   },
   {
     "pen": 2059153404,
@@ -1637,7 +1800,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-07-01",
-    "createUserName": "Camellia Coyett"
+    "createUserName": "Camellia Coyett",
+    "studMiddle": null
   },
   {
     "pen": 1675831688,
@@ -1647,7 +1811,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-11-18",
-    "createUserName": "Dilan Puddephatt"
+    "createUserName": "Dilan Puddephatt",
+    "studMiddle": null
   },
   {
     "pen": 8995912460,
@@ -1657,7 +1822,8 @@
     "studSex": "Female",
     "studStatus": "L",
     "createDate": "2019-07-28",
-    "createUserName": "Gertrudis Lutzmann"
+    "createUserName": "Gertrudis Lutzmann",
+    "studMiddle": null
   },
   {
     "pen": 7261505803,
@@ -1667,7 +1833,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-10-11",
-    "createUserName": "Dewey Kupper"
+    "createUserName": "Dewey Kupper",
+    "studMiddle": null
   },
   {
     "pen": 2551245738,
@@ -1677,7 +1844,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-08-21",
-    "createUserName": "Sigismond Stiller"
+    "createUserName": "Sigismond Stiller",
+    "studMiddle": null
   },
   {
     "pen": 8591580614,
@@ -1687,7 +1855,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2020-01-29",
-    "createUserName": "Karlotte Ditty"
+    "createUserName": "Karlotte Ditty",
+    "studMiddle": null
   },
   {
     "pen": 7578948761,
@@ -1697,7 +1866,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-03-24",
-    "createUserName": "Sonny Barbery"
+    "createUserName": "Sonny Barbery",
+    "studMiddle": null
   },
   {
     "pen": 5580689160,
@@ -1707,7 +1877,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-02-20",
-    "createUserName": "Abbi Copper"
+    "createUserName": "Abbi Copper",
+    "studMiddle": null
   },
   {
     "pen": 2594822571,
@@ -1717,7 +1888,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-05-17",
-    "createUserName": "Conrad Vaud"
+    "createUserName": "Conrad Vaud",
+    "studMiddle": null
   },
   {
     "pen": 2791834553,
@@ -1727,7 +1899,8 @@
     "studSex": "Female",
     "studStatus": "L",
     "createDate": "2019-08-03",
-    "createUserName": "Lexi Paradise"
+    "createUserName": "Lexi Paradise",
+    "studMiddle": null
   },
   {
     "pen": 2132873030,
@@ -1737,7 +1910,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-08-21",
-    "createUserName": "Lianne Jendrassik"
+    "createUserName": "Lianne Jendrassik",
+    "studMiddle": null
   },
   {
     "pen": 1689119281,
@@ -1747,7 +1921,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-06-04",
-    "createUserName": "Emylee Smithyman"
+    "createUserName": "Emylee Smithyman",
+    "studMiddle": null
   },
   {
     "pen": 7461588492,
@@ -1757,7 +1932,8 @@
     "studSex": "Female",
     "studStatus": "2XL",
     "createDate": "2019-11-22",
-    "createUserName": "Marlena Dimitresco"
+    "createUserName": "Marlena Dimitresco",
+    "studMiddle": null
   },
   {
     "pen": 5590419658,
@@ -1767,7 +1943,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-12-24",
-    "createUserName": "Eveline Grannell"
+    "createUserName": "Eveline Grannell",
+    "studMiddle": null
   },
   {
     "pen": 8105628009,
@@ -1777,7 +1954,8 @@
     "studSex": "Male",
     "studStatus": "2XL",
     "createDate": "2019-12-17",
-    "createUserName": "Omar Marcq"
+    "createUserName": "Omar Marcq",
+    "studMiddle": null
   },
   {
     "pen": 8140257410,
@@ -1787,7 +1965,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-08-29",
-    "createUserName": "Nickey Debow"
+    "createUserName": "Nickey Debow",
+    "studMiddle": null
   },
   {
     "pen": 8244362633,
@@ -1797,7 +1976,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-02-26",
-    "createUserName": "Garrott Forlonge"
+    "createUserName": "Garrott Forlonge",
+    "studMiddle": null
   },
   {
     "pen": 3936100457,
@@ -1807,7 +1987,8 @@
     "studSex": "Male",
     "studStatus": "S",
     "createDate": "2019-11-12",
-    "createUserName": "Farlie Peattie"
+    "createUserName": "Farlie Peattie",
+    "studMiddle": null
   },
   {
     "pen": 1198618715,
@@ -1817,7 +1998,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2020-01-08",
-    "createUserName": "Vaughn Rizzardo"
+    "createUserName": "Vaughn Rizzardo",
+    "studMiddle": null
   },
   {
     "pen": 2808894274,
@@ -1827,7 +2009,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2019-07-12",
-    "createUserName": "Lionel Hastewell"
+    "createUserName": "Lionel Hastewell",
+    "studMiddle": null
   },
   {
     "pen": 3463987108,
@@ -1837,7 +2020,8 @@
     "studSex": "Female",
     "studStatus": "XS",
     "createDate": "2019-07-06",
-    "createUserName": "Eloise Gauld"
+    "createUserName": "Eloise Gauld",
+    "studMiddle": null
   },
   {
     "pen": 5943080255,
@@ -1847,7 +2031,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2019-07-08",
-    "createUserName": "Etan Nutbeem"
+    "createUserName": "Etan Nutbeem",
+    "studMiddle": null
   },
   {
     "pen": 1751249243,
@@ -1857,7 +2042,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2020-02-07",
-    "createUserName": "Joellen Gudeman"
+    "createUserName": "Joellen Gudeman",
+    "studMiddle": null
   },
   {
     "pen": 2947574421,
@@ -1867,7 +2053,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-05-30",
-    "createUserName": "Perl Tregonna"
+    "createUserName": "Perl Tregonna",
+    "studMiddle": null
   },
   {
     "pen": 8838639201,
@@ -1877,7 +2064,8 @@
     "studSex": "Male",
     "studStatus": "XS",
     "createDate": "2019-09-01",
-    "createUserName": "Nickola Syer"
+    "createUserName": "Nickola Syer",
+    "studMiddle": null
   },
   {
     "pen": 7423581936,
@@ -1887,7 +2075,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2020-01-21",
-    "createUserName": "Kele Britian"
+    "createUserName": "Kele Britian",
+    "studMiddle": null
   },
   {
     "pen": 3240096697,
@@ -1897,7 +2086,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2020-01-18",
-    "createUserName": "Norma MacKnocker"
+    "createUserName": "Norma MacKnocker",
+    "studMiddle": null
   },
   {
     "pen": 8121047773,
@@ -1907,7 +2097,8 @@
     "studSex": "Male",
     "studStatus": "L",
     "createDate": "2019-02-16",
-    "createUserName": "Kendrick Parncutt"
+    "createUserName": "Kendrick Parncutt",
+    "studMiddle": null
   },
   {
     "pen": 3274251190,
@@ -1917,7 +2108,8 @@
     "studSex": "Male",
     "studStatus": "XL",
     "createDate": "2020-01-14",
-    "createUserName": "Urbain De Bischop"
+    "createUserName": "Urbain De Bischop",
+    "studMiddle": null
   },
   {
     "pen": 4827915801,
@@ -1927,7 +2119,8 @@
     "studSex": "Female",
     "studStatus": "3XL",
     "createDate": "2019-07-01",
-    "createUserName": "Jandy MacAllester"
+    "createUserName": "Jandy MacAllester",
+    "studMiddle": null
   },
   {
     "pen": 2164683839,
@@ -1937,7 +2130,8 @@
     "studSex": "Female",
     "studStatus": "XL",
     "createDate": "2019-06-18",
-    "createUserName": "Valenka Mathivet"
+    "createUserName": "Valenka Mathivet",
+    "studMiddle": null
   },
   {
     "pen": 2326474640,
@@ -1947,7 +2141,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2019-05-05",
-    "createUserName": "Maryl De Cristoforo"
+    "createUserName": "Maryl De Cristoforo",
+    "studMiddle": null
   },
   {
     "pen": 8643695420,
@@ -1957,7 +2152,8 @@
     "studSex": "Female",
     "studStatus": "M",
     "createDate": "2020-01-28",
-    "createUserName": "Charmine Boame"
+    "createUserName": "Charmine Boame",
+    "studMiddle": null
   },
   {
     "pen": 7125496126,
@@ -1967,7 +2163,8 @@
     "studSex": "Male",
     "studStatus": "3XL",
     "createDate": "2020-01-05",
-    "createUserName": "Marco Basten"
+    "createUserName": "Marco Basten",
+    "studMiddle": null
   },
   {
     "pen": 1400063941,
@@ -1977,7 +2174,8 @@
     "studSex": "Male",
     "studStatus": "M",
     "createDate": "2019-03-12",
-    "createUserName": "Wildon Monkley"
+    "createUserName": "Wildon Monkley",
+    "studMiddle": null
   },
   {
     "pen": 5837291706,
@@ -1987,7 +2185,8 @@
     "studSex": "Female",
     "studStatus": "S",
     "createDate": "2019-03-15",
-    "createUserName": "Jocelyn Grebert"
+    "createUserName": "Jocelyn Grebert",
+    "studMiddle": null
   },
   {
     "pen": 7527249268,
