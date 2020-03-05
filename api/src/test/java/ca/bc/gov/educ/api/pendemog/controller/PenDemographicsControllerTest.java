@@ -98,16 +98,16 @@ public class PenDemographicsControllerTest {
 
   @Test
   @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
-  public void testSearchPenDemographics_GivenNoQueryParameters_ShouldReturnStatusOkAndMaxFiftyResults() throws Exception {
+  public void testSearchPenDemographics_GivenNoQueryParameters_ShouldReturnStatusOkWithNoResults() throws Exception {
 
     this.mvc.perform(get("/")
             .accept(MediaType.APPLICATION_JSON)).andDo(print())
-            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(50)));
+            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
   @Test
   @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
-  public void testSearchPenDemographics_GivenAllQueryParams_ShouldReturnStatusOk() throws Exception {
+  public void testSearchPenDemographics_GivenAllQueryParams_ShouldReturnStatusOkWithOneResult() throws Exception {
 
     this.mvc.perform(get("/?studSurName=Fratczak&studGiven=Jaquelin&studBirth=20010519&studSex=Female")
             .accept(MediaType.APPLICATION_JSON)).andDo(print())
@@ -116,11 +116,11 @@ public class PenDemographicsControllerTest {
 
   @Test
   @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
-  public void testSearchPenDemographics_GivenOnlySexInQueryParam_ShouldReturnStatusOk() throws Exception {
+  public void testSearchPenDemographics_GivenOnlySexInQueryParam_ShouldReturnStatusOkAndNoResults() throws Exception {
 
     this.mvc.perform(get("/?studSex=Female")
             .accept(MediaType.APPLICATION_JSON)).andDo(print())
-            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(50)));
+            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
   @Test
@@ -129,7 +129,7 @@ public class PenDemographicsControllerTest {
 
     this.mvc.perform(get("/?studBirth=20010519")
             .accept(MediaType.APPLICATION_JSON)).andDo(print())
-            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(1)));
+            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
   @Test
