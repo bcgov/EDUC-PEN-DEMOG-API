@@ -16,14 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @RestController
 @EnableResourceServer
 @Slf4j
 public class PenDemographicsController implements PenDemographicsEndpoint {
-  private static final Pattern pattern = Pattern.compile("\\d{8}");
   @Getter(AccessLevel.PRIVATE)
   private final PenDemographicsService penDemographicsService;
   private static final PenDemographicsMapper mapper = PenDemographicsMapper.mapper;
@@ -42,10 +40,12 @@ public class PenDemographicsController implements PenDemographicsEndpoint {
 
   @Override
   public List<PenDemographics> searchPenDemographics(String studSurName, String studGiven, String studMiddle, String studBirth, String studSex) {
+    validateDateOfBirth(studBirth);
+    return getPenDemographicsService().searchPenDemographics(studSurName, studGiven, studMiddle, studBirth, studSex).stream().map(mapper::toStructure).collect(Collectors.toList());
+  }
+
+  private void validateDateOfBirth(String studBirth) {
     if (StringUtils.isNotBlank(studBirth)) {
-      if (!pattern.matcher(studBirth).matches()) {
-        throw new InvalidParameterException(studBirth, "Student  Date of Birth should be in yyyyMMdd format.");
-      }
       try {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         dateFormat.setLenient(false);
@@ -54,7 +54,6 @@ public class PenDemographicsController implements PenDemographicsEndpoint {
         throw new InvalidParameterException(studBirth, "Student  Date of Birth should be in yyyyMMdd format.");
       }
     }
-    return getPenDemographicsService().searchPenDemographics(studSurName, studGiven, studMiddle, studBirth, studSex).stream().map(mapper::toStructure).collect(Collectors.toList());
   }
 
   @Override
