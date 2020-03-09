@@ -4,7 +4,6 @@ import ca.bc.gov.educ.api.pendemog.model.PenDemographicsEntity;
 import ca.bc.gov.educ.api.pendemog.repository.PenDemographicsRepositoryCustom;
 import lombok.AccessLevel;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -33,31 +32,11 @@ public class PenDemographicsRepositoryCustomImpl implements PenDemographicsRepos
     final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
     final CriteriaQuery<PenDemographicsEntity> criteriaQuery = criteriaBuilder.createQuery(PenDemographicsEntity.class);
     Root<PenDemographicsEntity> penDemographicsEntityRoot = criteriaQuery.from(PenDemographicsEntity.class);
-    if (StringUtils.isNotBlank(studSurName)) {
-      predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studSurname"), studSurName.toUpperCase()));
-    }else {
-      predicates.add(criteriaBuilder.isNull(penDemographicsEntityRoot.get("studSurname")));
-    }
-    if (studGiven != null) {
-      predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studGiven"), studGiven.toUpperCase()));
-    }else {
-      predicates.add(criteriaBuilder.isNull(penDemographicsEntityRoot.get("studGiven")));
-    }
-    if (studMiddle != null) {
-      predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studMiddle"), studMiddle.toUpperCase()));
-    }else {
-      predicates.add(criteriaBuilder.isNull(penDemographicsEntityRoot.get("studMiddle")));
-    }
-    if (studBirth != null) {
-      predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studBirth"), studBirth));
-    }else {
-      predicates.add(criteriaBuilder.isNull(penDemographicsEntityRoot.get("studBirth")));
-    }
-    if (studSex != null) {
-      predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studSex"), studSex.toUpperCase()));
-    }else {
-      predicates.add(criteriaBuilder.isNull(penDemographicsEntityRoot.get("studSex")));
-    }
+    predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studSurname"), studSurName.toUpperCase()));
+    predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studGiven"), studGiven.toUpperCase()));
+    predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studMiddle"), studMiddle.toUpperCase()));
+    predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studBirth"), studBirth));
+    predicates.add(criteriaBuilder.equal(penDemographicsEntityRoot.get("studSex"), studSex.toUpperCase()));
     criteriaQuery.where(predicates.toArray(new Predicate[0]));
     return entityManager.createQuery(criteriaQuery).setMaxResults(50).getResultList();
   }

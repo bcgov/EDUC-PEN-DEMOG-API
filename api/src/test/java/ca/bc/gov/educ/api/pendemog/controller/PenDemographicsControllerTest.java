@@ -105,14 +105,6 @@ public class PenDemographicsControllerTest {
             .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
-  @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
-  public void testSearchPenDemographics_GivenAllQueryParams_ShouldReturnStatusOkWithOneResult() throws Exception {
-
-    this.mvc.perform(get("/?studSurName=Fratczak&studGiven=Jaquelin&studBirth=20010519&studSex=Female")
-            .accept(MediaType.APPLICATION_JSON)).andDo(print())
-            .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(1)));
-  }
 
   @Test
   @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
