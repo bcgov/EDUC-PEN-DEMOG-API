@@ -117,7 +117,7 @@ objects:
   - apiVersion: autoscaling/v2beta1
     kind: HorizontalPodAutoscaler
     metadata:
-      name: "${APP_NAME}-${JOB_NAME}-Autoscaler"
+      name: "${APP_NAME}-${JOB_NAME}-autoscaler"
     spec:
       scaleTargetRef:
         apiVersion: apps.openshift.io/v1
