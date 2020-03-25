@@ -117,7 +117,7 @@ objects:
   - apiVersion: autoscaling/v2beta1
     kind: HorizontalPodAutoscaler
     metadata:
-      name: "${APP_NAME}-${JOB_NAME}-autoscaler"
+      name: "${APP_NAME}-${JOB_NAME}-cpu-autoscaler"
     spec:
       scaleTargetRef:
         apiVersion: apps.openshift.io/v1
@@ -130,11 +130,24 @@ objects:
         - type: Resource
           resource:
             name: cpu
-            targetAverageUtilization: 5
-        - type: Resource
-          resource:
-            name: memory
-            targetAverageUtilization: 50
+            targetAverageUtilization: 90
+  - apiVersion: autoscaling/v2beta1
+      kind: HorizontalPodAutoscaler
+      metadata:
+        name: "${APP_NAME}-${JOB_NAME}-memory-autoscaler"
+      spec:
+        scaleTargetRef:
+          apiVersion: apps.openshift.io/v1
+          kind: DeploymentConfig
+          name: "${APP_NAME}-${JOB_NAME}"
+          subresource: scale
+        minReplicas: 1
+        maxReplicas: 3
+        metrics:
+          - type: Resource
+            resource:
+              name: memory
+              targetAverageUtilization: 5
 parameters:
   - name: REPO_NAME
     description: Application repository name
