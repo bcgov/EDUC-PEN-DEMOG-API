@@ -13,6 +13,7 @@ objects:
         app: "${APP_NAME}-${JOB_NAME}"
       name: "${APP_NAME}-${JOB_NAME}"
     spec:
+      replicas: 1
       selector:
         app: "${APP_NAME}-${JOB_NAME}"
         deploymentConfig: "${APP_NAME}-${JOB_NAME}"
