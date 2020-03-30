@@ -36,6 +36,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         log.warn("handleHttpMessageNotReadable: ", ex);
         String error = "Malformed JSON request";
+        log.error("{} ", error, ex);
         return buildResponseEntity(new ApiError(BAD_REQUEST, error, ex));
     }
 
@@ -55,6 +56,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         log.info("handleEntityNotFound", ex);
         ApiError apiError = new ApiError(NOT_FOUND);
         apiError.setMessage(ex.getMessage());
+        log.error("{} ", apiError.getMessage(), ex);
         return buildResponseEntity(apiError);
     }
 
@@ -69,6 +71,21 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         log.warn("handleInvalidParameter or InvalidValue", ex);
         ApiError apiError = new ApiError(BAD_REQUEST);
         apiError.setMessage(ex.getMessage());
+        log.error("{} ", apiError.getMessage(), ex);
+        return buildResponseEntity(apiError);
+    }
+
+    /**
+     * Handles IllegalArgumentException
+     *
+     * @param ex the InvalidParameterException
+     * @return the ApiError object
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    protected ResponseEntity<Object> handleInvalidParameter(IllegalArgumentException ex) {
+        ApiError apiError = new ApiError(BAD_REQUEST);
+        apiError.setMessage(ex.getMessage());
+        log.error("{} ",apiError.getMessage(), ex);
         return buildResponseEntity(apiError);
     }
 
@@ -92,6 +109,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.setMessage("Validation error");
         apiError.addValidationErrors(ex.getBindingResult().getFieldErrors());
         apiError.addValidationError(ex.getBindingResult().getGlobalErrors());
+        log.error("{} ", apiError.getMessage(), ex);
         return buildResponseEntity(apiError);
     }
 
