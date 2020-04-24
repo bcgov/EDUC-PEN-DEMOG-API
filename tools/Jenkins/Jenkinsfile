@@ -44,11 +44,12 @@ pipeline{
   }
 
     environment{
-      TOOLS = 'c2mvws-tools'
-      DEV = 'c2mvws-dev'
-      TEST = 'c2mvws-test'
-      PROD = 'c2mvws-prod'
-
+      NAMESPACE="c2mvws"
+      TOOLS = "${NAMESPACE}-tools"
+      DEV = "${NAMESPACE}-dev"
+      TEST = "${NAMESPACE}-test"
+      PROD = "${NAMESPACE}-prod"
+      
       REPO_NAME = 'educ-pen-demog-api'
       OWNER = 'bcgov'
       JOB_NAME = 'master'
@@ -71,7 +72,7 @@ pipeline{
       steps {
         script {
           try{
-            sh( script: "oc describe configmaps ${APP_NAME}-config", returnStdout: true)
+            sh( script: "oc describe configmaps ${APP_NAME}-dev-config", returnStdout: true)
             echo 'Config map already exists. Moving to next stage...'
           } catch(e){
             configProperties = input(
