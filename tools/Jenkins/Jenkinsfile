@@ -179,6 +179,15 @@ pipeline{
         }
       }
     }
+    stage('Create/Update Config Maps'){
+      steps{
+        script{
+          dir('tools/jenkins'){
+            sh "bash ./update-configmap.sh \"dev\" ${APP_NAME} ${NAMESPACE}"
+          }
+        }
+      }
+    }
     stage('Report to SonarQube') {
         steps {
             script{
