@@ -56,9 +56,4 @@ public class PenDemographicsController implements PenDemographicsEndpoint {
     }
   }
 
-  @Override
-  public String health() {
-    log.trace("Health check OK, Returning OK.");
-    return "OK";
-  }
 }

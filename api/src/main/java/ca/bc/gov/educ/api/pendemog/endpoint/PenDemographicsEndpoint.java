@@ -32,7 +32,4 @@ public interface PenDemographicsEndpoint {
                                               @RequestParam(name="studBirth", defaultValue = " ") String studBirth,
                                               @RequestParam(name="studSex", defaultValue = " ") String studSex);
 
-  @GetMapping("/health")
-  @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK")})
-  String health();
 }
