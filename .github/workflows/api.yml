@@ -11,6 +11,15 @@ on:
     paths:
       - 'api/src/**'
 
+env:
+  DEV: c2mvws-dev
+  TOOLS: c2mvws-tools
+  REPO_NAME: educ-pen-demog-api
+  JOB_NAME: master
+  APP_NAME: pen-demographics-api
+  APP_DOMAIN: pathfinder.gov.bc.ca
+  DEV_TAG: dev
+
 jobs:
   test:
 
@@ -36,3 +45,22 @@ jobs:
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_LOGIN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
+
+      - run: mvn -f pom.xml -Dmaven.test.skip=true package
+      - name: OpenShift Action
+        uses: redhat-developer/openshift-actions@v1.1
+        with:
+          version: '3.11'
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL }}
+          parameters: '{"apitoken": "${{ secrets.OPENSHIFT_API_TOKEN }}", "acceptUntrustedCerts": "true"}'
+          cmd: |
+            'project ${TOOLS}'
+            'new-build --name=${REPO_NAME}-${JOB_NAME} --image-stream=redhat-openjdk18-openshift:1.1 --binary'
+            'start-build ${REPO_NAME}-${JOB_NAME} --from-file=./api/target/pendemog-api-*.jar --wait'
+            'delete bc ${REPO_NAME}-${JOB_NAME}'
+            'project ${DEV}'
+            'tag ${TOOLS}/${REPO_NAME}-${JOB_NAME}:latest ${REPO_NAME}-${JOB_NAME}:${DEV_TAG}'
+            'process -f ../tools/openshift/api.dc.yaml -p REPO_NAME=${REPO_NAME} -p JOB_NAME=${JOB_NAME} -p NAMESPACE=${DEV} -p APP_NAME=${APP_NAME} -p HOST_ROUTE=${APP_NAME}-${DEV}.${APP_DOMAIN} -p TAG=${DEV_TAG} > ~/api.dc.yaml'
+            'apply -f ~/api.dc.yaml'
+            'rollout status dc --watch=true'
+
