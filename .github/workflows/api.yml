@@ -63,6 +63,6 @@ jobs:
         run: |
           oc login ${{ secrets.OPENSHIFT_SERVER_URL }} --token=${{ secrets.OPENSHIFT_API_TOKEN }}
           oc project $TOOLS
-          oc delete bc $REPO_NAME-$JOB_NAME
+          oc delete bc $REPO_NAME-$JOB_NAME --ignore-not-found=true
           oc new-build --name=$REPO_NAME-$JOB_NAME --image-stream=redhat-openjdk18-openshift:1.1 --binary
         working-directory: ${{ github.workspace }}
