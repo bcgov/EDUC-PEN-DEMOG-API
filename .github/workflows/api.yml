@@ -54,9 +54,9 @@ jobs:
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_LOGIN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
-          
+
       - name: Build Package
-      - run: mvn -f pom.xml -Dmaven.test.skip=true package
+        run: mvn -f pom.xml -Dmaven.test.skip=true package
       - name: Download OC Client
         uses: carlosperate/download-file-action@v1.0.3
         id: download-oc-client
