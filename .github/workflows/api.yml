@@ -10,6 +10,13 @@ on:
       - 'Fix/*'
     paths:
       - 'api/src/**'
+  deployment:
+    branches:
+      - master
+      - 'feature/**'
+      - 'Feature/**'
+      - 'fix/*'
+      - 'Fix/*'
 
 env:
   DEV: c2mvws-dev
