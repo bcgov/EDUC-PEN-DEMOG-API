@@ -48,19 +48,16 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-      - run: mvn -f pom.xml clean test
-      - name: Run Sonar Analysis
-        run: mvn -f pom.xml sonar:sonar
-          -Dsonar.login=${{ secrets.SONAR_LOGIN }}
-          -Dsonar.host.url=${{ secrets.SONAR_HOST }}
 
       - run: mvn -f pom.xml -Dmaven.test.skip=true package
-      - name: OpenShift Action
-        uses: redhat-developer/openshift-actions@v2.0
+      - name: Download OC Client
+        uses: Legion2/download-release-action@v2.1.0
         with:
-          version: '3.11.216'
-          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL }}
-          parameters: '{"apitoken": "${{ secrets.OPENSHIFT_API_TOKEN }}", "acceptUntrustedCerts": "true"}'
-          cmd: |
-            'project ${TOOLS}'
-            'start-build ${PIPELINE_NAME}'
+          repository: openshift/origin
+          tag: 'v3.11.0'
+          file: openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+      - name: Deploy to OpenShift
+        run: tar -C openshift-origin-client -zxf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+        working-directory: ../
+      - run: oc version
+        working-directory: openshift-origin-client
