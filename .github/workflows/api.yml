@@ -59,5 +59,5 @@ jobs:
       - name: Deploy to OpenShift
         run: mkdir openshift-origin-client && tar -C openshift-origin-client -zxf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
         working-directory: ${{ github.workspace }}
-      - run: ./oc version
+      - run: ls -la
         working-directory: openshift-origin-client
