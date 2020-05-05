@@ -67,7 +67,7 @@ jobs:
             'start-build ${REPO_NAME}-${JOB_NAME} --from-file=./api/target/pendemog-api-0.0.1-SNAPSHOT.jar --wait'
             'project ${DEV}'
             'tag ${TOOLS}/${REPO_NAME}-${JOB_NAME}:latest ${REPO_NAME}-${JOB_NAME}:${DEV_TAG}'
-            'process -f ../tools/openshift/api.dc.yaml -p REPO_NAME=${REPO_NAME} -p JOB_NAME=${JOB_NAME} -p NAMESPACE=${DEV} -p APP_NAME=${APP_NAME} -p HOST_ROUTE=${APP_NAME}-${DEV}.${APP_DOMAIN} -p TAG=${DEV_TAG}'
+            'process -f ./tools/openshift/api.dc.yaml -p REPO_NAME=${REPO_NAME} -p JOB_NAME=${JOB_NAME} -p NAMESPACE=${DEV} -p APP_NAME=${APP_NAME} -p HOST_ROUTE=${APP_NAME}-${DEV}.${APP_DOMAIN} -p TAG=${DEV_TAG}'
             'apply -f -'
             'rollout status dc --watch=true'
 
