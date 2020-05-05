@@ -49,7 +49,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - run: mvn -f pom.xml -Dmaven.test.skip=true package
       - name: Download OC Client
         uses: carlosperate/download-file-action@v1.0.3
         id: download-oc-client
@@ -60,7 +59,7 @@ jobs:
         run: tar -zxf openshift-origin-client.tar.gz
         working-directory: ${{ github.workspace }}
       - run: ls -la
-        working-directory: openshift-origin-client
+        working-directory: ${{ github.workspace }}
       - name: Deploy to OpenShift
         run: ./oc version
         working-directory: openshift-origin-client
