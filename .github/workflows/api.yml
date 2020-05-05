@@ -57,8 +57,12 @@ jobs:
       - name: Untar OC Client
         run: tar -zxf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz && mv openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit openshift-origin-client
         working-directory: ${{ github.workspace }}
-      - run: ls -la
-        working-directory: openshift-origin-client
-      - name: Deploy to OpenShift
-        run: ./oc login ${{ secrets.OPENSHIFT_SERVER_URL }}
-        working-directory: openshift-origin-client
+      - name: Add OC Client to path
+        run: echo "::add-path::${{github.workspace}}/openshift-origin-client"
+      - name: Depoloy to OpenShift
+        run: |
+          oc login ${{ secrets.OPENSHIFT_SERVER_URL }} --token=${{ secrets.OPENSHIFT_API_TOKEN }}
+          oc project $TOOLS
+          oc delete bc $REPO_NAME-$JOB_NAME
+          oc new-build --name=$REPO_NAME-$JOB_NAME --image-stream=redhat-openjdk18-openshift:1.1 --binary
+        working-directory: ${{ github.workspace }}
