@@ -60,5 +60,5 @@ jobs:
       - run: ls -la
         working-directory: openshift-origin-client
       - name: Deploy to OpenShift
-        run: oc login ${{ secrets.OPENSHIFT_SERVER_URL }}
+        run: ./oc login ${{ secrets.OPENSHIFT_SERVER_URL }}
         working-directory: openshift-origin-client
