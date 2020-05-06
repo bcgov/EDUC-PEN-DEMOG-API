@@ -77,5 +77,6 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@v1.2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          JAVA_HOME: '' # Avoid 'java: not found' error
         with:
           projectBaseDir: api
