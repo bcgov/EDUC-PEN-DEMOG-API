@@ -12,6 +12,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  SONAR_PROJECT_KEY: bcgov_EDUC-PEN-DEMOG-API
+
 jobs:
   test:
 
@@ -48,7 +51,7 @@ jobs:
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.organization=bcgov-sonarcloud
-          -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
+          -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
         env:
           # Needed to get some information about the pull request, if any
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
