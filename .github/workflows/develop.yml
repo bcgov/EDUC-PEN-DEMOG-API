@@ -39,8 +39,6 @@ jobs:
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_LOGIN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
-          -Dsonar.organization=bcgov-sonarcloud
-          -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
       - name: Run Unit Test
         run: mvn -f pom.xml clean test
 
