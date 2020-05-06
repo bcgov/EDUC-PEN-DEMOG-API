@@ -73,9 +73,9 @@ jobs:
           oc rollout status dc/$APP_NAME-$JOB_NAME --watch=true
         working-directory: ${{ github.workspace }}
 
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@v1.2
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: api
+      - name: Run Sonar Analysis
+        run: mvn -f pom.xml sonar:sonar
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.host.url=${{ secrets.SONAR_HOST }}
+          -Dsonar.organization=bcgov-sonarcloud
+          -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API

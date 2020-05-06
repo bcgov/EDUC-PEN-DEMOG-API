@@ -37,10 +37,10 @@ jobs:
             ${{ runner.os }}-maven-
       - name: Run Unit Test
         run: mvn -f pom.xml clean test
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@v1.2
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: api
+      - name: Run Sonar Analysis
+        run: mvn -f pom.xml sonar:sonar
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.host.url=${{ secrets.SONAR_HOST }}
+          -Dsonar.organization=bcgov-sonarcloud
+          -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
           
