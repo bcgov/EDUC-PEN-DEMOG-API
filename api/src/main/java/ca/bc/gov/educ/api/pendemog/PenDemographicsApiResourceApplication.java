@@ -24,7 +24,7 @@ public class PenDemographicsApiResourceApplication {
     @Override
     public void configure(WebSecurity web) {
       web.ignoring().antMatchers("/v3/api-docs/**",
-              "/actuator/health", "/actuator/prometheus",
+              "/actuator/health","/actuator/prometheus",
               "/swagger-ui/**", "/health");
     }
   }
