@@ -1,13 +1,9 @@
-name: API CI
+name: API Deployment
 
 on:
   push:
     branches:
       - master
-      - 'feature/**'
-      - 'Feature/**'
-      - 'fix/*'
-      - 'Fix/*'
     paths:
       - 'api/src/**'
   deployment:
@@ -17,7 +13,7 @@ on:
       - 'Feature/**'
       - 'fix/*'
       - 'Fix/*'
-
+      
 env:
   DEV: c2mvws-dev
   TOOLS: c2mvws-tools
@@ -26,7 +22,7 @@ env:
   APP_NAME: pen-demographics-api
   APP_DOMAIN: pathfinder.gov.bc.ca
   DEV_TAG: dev
-  PIPELINE_NAME: pen-demographics-pipeline
+  ARTIFACT_NAME: pendemog-api-0.0.1-SNAPSHOT.jar
 
 jobs:
   test:
@@ -39,6 +35,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8
@@ -48,15 +47,9 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-      - name: Run Unit Test
-        run: mvn -f pom.xml clean test
-      - name: Run Sonar Analysis
-        run: mvn -f pom.xml sonar:sonar
-          -Dsonar.login=${{ secrets.SONAR_LOGIN }}
-          -Dsonar.host.url=${{ secrets.SONAR_HOST }}
+      - name: Run Unit Test and Build
+        run: mvn -f pom.xml clean package
 
-      - name: Build Package
-        run: mvn -f pom.xml -Dmaven.test.skip=true package
       - name: Download OC Client
         uses: carlosperate/download-file-action@v1.0.3
         id: download-oc-client
@@ -73,12 +66,14 @@ jobs:
           oc project $TOOLS
           oc delete bc $REPO_NAME-$JOB_NAME --ignore-not-found=true
           oc new-build --name=$REPO_NAME-$JOB_NAME --image-stream=redhat-openjdk18-openshift:1.1 --binary
-          oc start-build $REPO_NAME-$JOB_NAME --from-file=./api/target/pendemog-api-0.0.1-SNAPSHOT.jar --wait
+          oc start-build $REPO_NAME-$JOB_NAME --from-file=./api/target/$ARTIFACT_NAME --wait
           oc project $DEV
           oc tag $TOOLS/$REPO_NAME-$JOB_NAME:latest $REPO_NAME-$JOB_NAME:$DEV_TAG
           oc process -f ./tools/openshift/api.dc.yaml -p REPO_NAME=$REPO_NAME -p JOB_NAME=$JOB_NAME -p NAMESPACE=$DEV -p APP_NAME=$APP_NAME -p HOST_ROUTE=$APP_NAME-$DEV.$APP_DOMAIN -p TAG=$DEV_TAG | oc apply -f -
-        working-directory: ${{ github.workspace }}
-      - name: Rollout
-        run: |
           oc rollout status dc/$APP_NAME-$JOB_NAME --watch=true
         working-directory: ${{ github.workspace }}
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@v1.2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
