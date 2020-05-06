@@ -42,5 +42,5 @@ jobs:
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
           -Dsonar.organization=bcgov-sonarcloud
-          -Dsonar.projectKey=EDUC-PEN-DEMOG-API
+          -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
           
