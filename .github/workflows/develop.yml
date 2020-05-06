@@ -35,11 +35,10 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Run Unit Test
+        run: mvn -f pom.xml clean test
       - name: Run Sonar Analysis
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_LOGIN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
-      - name: Run Unit Test
-        run: mvn -f pom.xml clean test
-
           
