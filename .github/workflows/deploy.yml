@@ -25,7 +25,7 @@ env:
   ARTIFACT_NAME: pendemog-api-0.0.1-SNAPSHOT.jar
 
 jobs:
-  test:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -82,10 +82,9 @@ jobs:
       - name: Run Sonar Analysis
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-          -Dsonar.host.url=${{ secrets.SONAR_HOST }}
+          -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.organization=bcgov-sonarcloud
-          -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
+          -Dsonar.projectKey=bcgov_$REPO_NAME
         env:
           # Needed to get some information about the pull request, if any
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
