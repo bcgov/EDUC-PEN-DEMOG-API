@@ -84,7 +84,7 @@ jobs:
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.organization=bcgov-sonarcloud
-          -Dsonar.projectKey=bcgov_$REPO_NAME
+          -Dsonar.projectKey=bcgov_${{ env.REPO_NAME }}
         env:
           # Needed to get some information about the pull request, if any
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
