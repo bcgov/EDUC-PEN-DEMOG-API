@@ -73,9 +73,19 @@ jobs:
           oc rollout status dc/$APP_NAME-$JOB_NAME --watch=true
         working-directory: ${{ github.workspace }}
 
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
       - name: Run Sonar Analysis
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
           -Dsonar.organization=bcgov-sonarcloud
           -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
+        env:
+          # Needed to get some information about the pull request, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
