@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-maven-
       - name: Run Sonar Analysis
         run: mvn -f pom.xml sonar:sonar
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.login=${{ secrets.SONAR_LOGIN }}
           -Dsonar.host.url=${{ secrets.SONAR_HOST }}
           -Dsonar.organization=bcgov-sonarcloud
           -Dsonar.projectKey=bcgov_EDUC-PEN-DEMOG-API
