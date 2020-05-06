@@ -23,6 +23,7 @@ env:
   APP_DOMAIN: pathfinder.gov.bc.ca
   DEV_TAG: dev
   ARTIFACT_NAME: pendemog-api-0.0.1-SNAPSHOT.jar
+  SONAR_PROJECT_KEY: bcgov_EDUC-PEN-DEMOG-API
 
 jobs:
   deploy:
@@ -84,7 +85,7 @@ jobs:
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.organization=bcgov-sonarcloud
-          -Dsonar.projectKey=bcgov_${{ env.REPO_NAME }}
+          -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
         env:
           # Needed to get some information about the pull request, if any
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
