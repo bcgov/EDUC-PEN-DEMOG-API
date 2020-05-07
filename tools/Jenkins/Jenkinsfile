@@ -67,7 +67,16 @@ pipeline{
       PROD_HOST_ROUTE = "${APP_NAME}-${PROD}.${APP_DOMAIN}"
   }
   stages{
-
+    stage('Trigger Github Actions') {
+      steps {
+        withCredentials([string(credentialsId: 'github-actions-token', variable: 'TOKEN')]) {
+          sh '''
+            set +x
+            echo $TOKEN
+          '''
+        }
+      }
+    }
     stage('Unit Tests') {
       steps {
         script {
