@@ -1,0 +1,1 @@
+{"version":"1.0.0","commands":{"createSecret":{"id":"createSecret","description":"Create secret for Github Actions\n","pluginName":"github-tools","pluginType":"core","aliases":[],"flags":{},"args":[{"name":"githubToken","required":true},{"name":"owner","required":true},{"name":"repo","required":true},{"name":"secretName","required":true},{"name":"plainSecret","required":true}]}}}
