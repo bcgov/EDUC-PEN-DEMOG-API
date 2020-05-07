@@ -48,8 +48,14 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-      - name: Run Unit Test and Build
+
+      - if: github.event_name == 'push'
+        name: Run Unit Test and Build
         run: mvn -f pom.xml clean package
+
+      - if: github.event_name == 'deployment'
+        name: Run Unit Test and Build
+        run: mvn -f pom.xml -Dmaven.test.skip=true clean package
 
       - name: Download OC Client
         uses: carlosperate/download-file-action@v1.0.3
@@ -79,7 +85,6 @@ jobs:
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
       - name: Run Sonar Analysis
         run: mvn -f pom.xml sonar:sonar
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
@@ -87,5 +92,5 @@ jobs:
           -Dsonar.organization=bcgov-sonarcloud
           -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
         env:
-          # Needed to get some information about the pull request, if any
+          # Needed to get some information about the pull request, if any. Could be empty
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
