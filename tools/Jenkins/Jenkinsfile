@@ -67,7 +67,13 @@ pipeline{
       PROD_HOST_ROUTE = "${APP_NAME}-${PROD}.${APP_DOMAIN}"
   }
   stages{
-
+    stage('Trigger Github Actions Workflow') {
+      steps {
+        withCredentials([string(credentialsId: 'c2mvws-tools-github-actions-token', variable: 'TOKEN')]) {
+          triggerWorkflow(TOKEN)
+        }
+      }
+    }
     stage('Unit Tests') {
       steps {
         script {
@@ -156,6 +162,18 @@ pipeline{
         }
     }
   }
+}
+
+def triggerWorkflow(String token) {
+  def deployRequest = """
+    {
+      "ref": "feature/actions",
+      "environment": "dev"
+    }
+  """
+  def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"]], contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: deployRequest, url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments"
+  echo "Status: ${response.status}"
+  echo "Status: ${response.content}"
 }
 
 def deployStage(String stageEnv, String projectEnv, String hostRouteEnv, String tag) {
