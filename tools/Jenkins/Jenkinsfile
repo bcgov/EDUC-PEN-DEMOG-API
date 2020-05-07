@@ -171,9 +171,11 @@ def triggerWorkflow(String token) {
       "environment": "dev"
     }
   """
-  def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"]], contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: deployRequest, url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments"
+  def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: deployRequest, url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments"
   echo "Status: ${response.status}"
-  echo "Status: ${response.content}"
+  echo "Content: ${response.content}"
+  def jsonObj = readJSON text: response.content
+  echo "Action: ${jsonObj.action}"
 }
 
 def deployStage(String stageEnv, String projectEnv, String hostRouteEnv, String tag) {
