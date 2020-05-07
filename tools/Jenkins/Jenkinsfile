@@ -67,13 +67,14 @@ pipeline{
       PROD_HOST_ROUTE = "${APP_NAME}-${PROD}.${APP_DOMAIN}"
   }
   stages{
-    stage('Trigger Github Actions') {
+    stage('Trigger Github Actions Workflow') {
       steps {
         withCredentials([string(credentialsId: 'c2mvws-tools-github-actions-token', variable: 'TOKEN')]) {
           sh '''
             set +x
             echo $TOKEN
           '''
+          triggerWorkflow(TOKEN)
         }
       }
     }
@@ -165,6 +166,11 @@ pipeline{
         }
     }
   }
+}
+
+def triggerWorkflow(String token) {
+  echo token
+  github = GitHub.connect()
 }
 
 def deployStage(String stageEnv, String projectEnv, String hostRouteEnv, String tag) {
