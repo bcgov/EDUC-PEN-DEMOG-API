@@ -70,10 +70,6 @@ pipeline{
     stage('Trigger Github Actions Workflow') {
       steps {
         withCredentials([string(credentialsId: 'c2mvws-tools-github-actions-token', variable: 'TOKEN')]) {
-          sh '''
-            set +x
-            echo $TOKEN
-          '''
           triggerWorkflow(TOKEN)
         }
       }
@@ -169,7 +165,13 @@ pipeline{
 }
 
 def triggerWorkflow(String token) {
-  def response = httpRequest 'https://api.github.com/users/octocat/orgs'
+  def deployRequest = """
+    {
+      "ref": "feature/actions",
+      "environment": "dev"
+    }
+  """
+  def response = httpRequest authentication: "token ${token}", contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: deployRequest, url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments"
   echo "Status: ${response.status}"
   echo "Status: ${response.content}"
 }
