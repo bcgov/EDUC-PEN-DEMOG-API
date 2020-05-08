@@ -176,7 +176,7 @@ def triggerWorkflow(String token) {
   // echo "Content: ${response.content}"
 
   def scriptContent = """
-    curl -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments --data '{"ref": "feature/actions", "environment": "dev"}'
+    curl -vs -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" --data '{"ref": "feature/actions", "environment": "dev"} https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments'
   """
 
   def response = sh (
