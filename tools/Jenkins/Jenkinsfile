@@ -165,17 +165,28 @@ pipeline{
 }
 
 def triggerWorkflow(String token) {
-  def deployRequest = """
-    {
-      "ref": "feature/actions",
-      "environment": "dev"
-    }
+  // def deployRequest = """
+  //   {
+  //     "ref": "feature/actions",
+  //     "environment": "dev"
+  //   }
+  // """
+  // def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: deployRequest, url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments"
+  // echo "Status: ${response.status}"
+  // echo "Content: ${response.content}"
+
+  def scriptContent = """
+    curl -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments --data '{"ref": "feature/actions", "environment": "dev"}'
   """
-  def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: deployRequest, url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments"
-  echo "Status: ${response.status}"
-  echo "Content: ${response.content}"
-  def jsonObj = readJSON text: response.content
-  echo "Action: ${jsonObj.action}"
+
+  def response = sh (
+    script: scriptContent,
+    returnStdout: true
+  ).trim()
+
+  echo "Response: ${response}"
+  def jsonObj = readJSON text: response
+  echo "ID: ${jsonObj.id}"
 }
 
 def deployStage(String stageEnv, String projectEnv, String hostRouteEnv, String tag) {
