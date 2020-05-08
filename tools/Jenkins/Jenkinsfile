@@ -181,7 +181,7 @@ def triggerWorkflow(String token) {
   // """
 
   def scriptContent = """
-    curl -vs -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" --data '{"event_type": "test"}' https://api.github.com/repos/${OWNER}/${REPO_NAME}/dispatches
+    curl -s -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" --data '{"event_type": "test"}' https://api.github.com/repos/${OWNER}/${REPO_NAME}/dispatches
   """
 
   def response = sh (
@@ -217,7 +217,7 @@ def waitForWorkflowRunComplete(String token) {
     error('No workflow run in Github Acionts. Aborting the build!')
   } else {
     def count = 60  //timeout (60 * 10) seconds = 10 minutes
-    def (status, conclusion)
+    def status, conclusion
     do {
       (status, conclusion) = getWorkflowRunById(token, latestRunId)
       if(status != 'completed') {
