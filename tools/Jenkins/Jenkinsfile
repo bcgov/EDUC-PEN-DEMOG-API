@@ -218,13 +218,13 @@ def waitForWorkflowRunComplete(String token) {
   } else {
     def count = 60  //timeout (60 * 10) seconds = 10 minutes
     def status, conclusion
-    do {
+    while(count-- > 0 && status != 'completed') {
       (status, conclusion) = getWorkflowRunById(token, latestRunId)
       if(status != 'completed') {
         echo "Waiting for workflow run complete: ${count}"
         sleep(10)
       }
-    } while(count-- > 0 && status != 'completed')
+    } 
 
     if(status == 'completed' && conclusion != 'success') {
       error("Workflow run was ${conclusion}. Aborting the build!")
