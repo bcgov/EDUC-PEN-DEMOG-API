@@ -208,7 +208,7 @@ def getWorkflowRunById(String token, long runId) {
   echo "getWorkflowRunById Status: ${response.status}"
   //echo "Content: ${response.content}"
   def jsonObj = readJSON text: response.content
-  [response.status, response.conclusion]
+  [jsonObj.status, jsonObj.conclusion]
 }
 
 def waitForWorkflowRunComplete(String token) {
