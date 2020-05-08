@@ -71,7 +71,7 @@ pipeline{
       steps {
         withCredentials([string(credentialsId: 'c2mvws-tools-github-actions-token', variable: 'TOKEN')]) {
           triggerWorkflow(TOKEN)
-          queryWorkflowRun(TOKEN)
+          waitForWorkflowRunComplete(TOKEN)
         }
       }
     }
@@ -193,12 +193,45 @@ def triggerWorkflow(String token) {
   echo "triggered test workflow in Github Actions!"
 }
 
-def queryWorkflowRun(String token) {
+def getLatestWorkflowRun(String token) {
   def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/actions/runs?branch=master&event=repository_dispatch"
-  echo "Status: ${response.status}"
-  echo "Content: ${response.content}"
+  echo "getLatestWorkflowRun Status: ${response.status}"
+  //echo "Content: ${response.content}"
   def jsonObj = readJSON text: response.content
   echo "Total count: ${jsonObj.total_count}"
+  def latestRun = jsonObj.total_count > 0 ? jsonObj.workflow_runs.max { it.created_at } : null
+  latestRun ? latestRun.id : null
+}
+
+def getWorkflowRunById(String token, BigInteger runId) {
+  def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/actions/runs/${runId}"
+  echo "getWorkflowRunById Status: ${response.status}"
+  //echo "Content: ${response.content}"
+  def jsonObj = readJSON text: response.content
+  [response.status, response.conclusion]
+}
+
+def waitForWorkflowRunComplete(String token) {
+  def latestRunId = getLatestWorkflowRun(token)
+  if(!latestRunId) {
+    error('No workflow run in Github Acionts. Aborting the build!')
+  } else {
+    def count = 60  //timeout (60 * 10) seconds = 10 minutes
+    def (status, conclusion)
+    do {
+      (status, conclusion) = getWorkflowRunById(token, latestRunId)
+      if(status != 'completed') {
+        echo "Waiting for workflow run complete: ${count}"
+        sleep(10)
+      }
+    } while(count-- > 0 && status != 'completed')
+
+    if(status == 'completed' && conclusion != 'success') {
+      error("Workflow run was ${conclusion}. Aborting the build!")
+    } else if(count <= 0) {
+      error('Workflow run query timed out. Aborting the build!')
+    }
+  }
 }
 
 def deployStage(String stageEnv, String projectEnv, String hostRouteEnv, String tag) {
