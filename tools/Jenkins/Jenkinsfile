@@ -71,6 +71,7 @@ pipeline{
       steps {
         withCredentials([string(credentialsId: 'c2mvws-tools-github-actions-token', variable: 'TOKEN')]) {
           triggerWorkflow(TOKEN)
+          queryWorkflowRun(TOKEN)
         }
       }
     }
@@ -190,7 +191,9 @@ def triggerWorkflow(String token) {
 
   echo "Response: ${response}"
   echo "triggered test workflow in Github Actions!"
+}
 
+def queryWorkflowRun(String token) {
   def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/actions/runs?branch=master&event=repository_dispatch"
   echo "Status: ${response.status}"
   echo "Content: ${response.content}"
