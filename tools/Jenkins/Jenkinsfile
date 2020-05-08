@@ -203,7 +203,7 @@ def getLatestWorkflowRun(String token) {
   latestRun ? latestRun.id : null
 }
 
-def getWorkflowRunById(String token, BigInteger runId) {
+def getWorkflowRunById(String token, long runId) {
   def response = httpRequest customHeaders: [[name: 'Authorization', value: "token ${token}"], [name: 'Accept', value: "application/vnd.github.ant-man-preview+json"]], url: "https://api.github.com/repos/${OWNER}/${REPO_NAME}/actions/runs/${runId}"
   echo "getWorkflowRunById Status: ${response.status}"
   //echo "Content: ${response.content}"
