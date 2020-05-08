@@ -175,8 +175,12 @@ def triggerWorkflow(String token) {
   // echo "Status: ${response.status}"
   // echo "Content: ${response.content}"
 
+  // def scriptContent = """
+  //   curl -vs -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" --data '{"ref": "feature/actions", "environment": "dev"}' https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments
+  // """
+
   def scriptContent = """
-    yum update -y nss curl libcurl && curl -vs -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" --data '{"ref": "feature/actions", "environment": "dev"}' https://api.github.com/repos/${OWNER}/${REPO_NAME}/deployments
+    curl -vs -H "Authorization: token ${token}" -H "Accept: application/vnd.github.ant-man-preview+json"  -H "Content-Type: application/json" --data '{"event_type": "on-demand-test"}' https://api.github.com/repos/${OWNER}/${REPO_NAME}/dispatches
   """
 
   def response = sh (
