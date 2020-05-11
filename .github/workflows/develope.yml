@@ -1,6 +1,17 @@
 name: API Development
 
 on:
+  push:
+    branches:
+      - 'master'
+      - 'feature/**'
+      - 'Feature/**'
+      - 'fix/*'
+      - 'Fix/*'
+    paths:
+      - 'api/src/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
   repository_dispatch:
     types: [test]
 
