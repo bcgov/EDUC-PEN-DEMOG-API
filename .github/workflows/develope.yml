@@ -12,6 +12,8 @@ on:
       - 'api/src/**'
   pull_request:
     types: [opened, synchronize, reopened]
+    paths:
+      - 'api/src/**'
   repository_dispatch:
     types: [test]
 
