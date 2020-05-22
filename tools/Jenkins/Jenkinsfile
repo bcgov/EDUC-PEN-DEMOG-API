@@ -44,11 +44,12 @@ pipeline{
   }
 
     environment{
-      TOOLS = 'c2mvws-tools'
-      DEV = 'c2mvws-dev'
-      TEST = 'c2mvws-test'
-      PROD = 'c2mvws-prod'
-
+      NAMESPACE="c2mvws"
+      TOOLS = "${NAMESPACE}-tools"
+      DEV = "${NAMESPACE}-dev"
+      TEST = "${NAMESPACE}-test"
+      PROD = "${NAMESPACE}-prod"
+      
       REPO_NAME = 'educ-pen-demog-api'
       OWNER = 'bcgov'
       JOB_NAME = 'master'
@@ -75,21 +76,6 @@ pipeline{
         }
       }
     }
-    // stage('Unit Tests') {
-    //   steps {
-    //     script {
-    //       def pom = readMavenPom file: 'api/pom.xml'
-    //       VERSION = pom.version
-
-    //       //Env variable is to fix issue where special characters in password were not being escaped properly
-    //       def command = $//bin/bash -c "mvn -f ./api/pom.xml test"/$
-    //       sh """
-    //         set +x
-    //         $command
-    //       """
-    //     }
-    //   }
-    // }
     stage('Build App') {
       steps {
         script {
@@ -155,6 +141,15 @@ pipeline{
         }
         failure{
           echo 'Deployment to Dev failed'
+        }
+      }
+    }
+    stage('Create/Update Config Maps'){
+      steps{
+        script{
+          dir('tools/jenkins'){
+            sh "bash ./update-configmap.sh \"dev\" ${APP_NAME} ${NAMESPACE}"
+          }
         }
       }
     }
