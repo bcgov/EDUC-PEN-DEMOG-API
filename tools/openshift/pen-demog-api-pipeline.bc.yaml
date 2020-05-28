@@ -12,7 +12,6 @@ objects:
       labels:
         build: pen-demographics-api-pipeline
       name: pen-demographics-api-pipeline
-      namespace: c2mvws-tools
     spec:
       source:
         git:
