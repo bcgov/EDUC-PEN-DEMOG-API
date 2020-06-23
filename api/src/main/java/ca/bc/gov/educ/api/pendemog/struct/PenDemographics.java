@@ -20,6 +20,10 @@ public class PenDemographics {
   private String studBirth;
   private String studSex;
   private String studStatus;
+  private String localID;
+  private String postalCode;
+  private String grade;
+  private String mincode;
   private String createDate;
   private String createUserName;
 }

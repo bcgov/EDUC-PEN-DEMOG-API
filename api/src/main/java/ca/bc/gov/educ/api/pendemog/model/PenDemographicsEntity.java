@@ -49,6 +49,18 @@ public class PenDemographicsEntity {
   @Column(name = "STUD_STATUS")
   private String studStatus;
 
+  @Column(name = "PEN_LOCAL_ID")
+  private String localID;
+
+  @Column(name = "POSTAL")
+  private String postalCode;
+
+  @Column(name = "STUD_GRADE")
+  private String grade;
+
+  @Column(name = "PEN_MINCODE")
+  private String mincode;
+
   @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "CREATE_DATE")
   private Date createDate;
