@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -23,6 +25,8 @@ public class PenDemographics {
   private String localID;
   private String postalCode;
   private String grade;
+  private String gradeYear;
+  private String demogCode;
   private String mincode;
   private String createDate;
   private String createUserName;

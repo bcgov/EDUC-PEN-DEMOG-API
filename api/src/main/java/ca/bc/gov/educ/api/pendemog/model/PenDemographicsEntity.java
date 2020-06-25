@@ -58,6 +58,12 @@ public class PenDemographicsEntity {
   @Column(name = "STUD_GRADE")
   private String grade;
 
+  @Column(name = "STUD_GRADE_YEAR")
+  private String gradeYear;
+
+  @Column(name = "STUD_DEMOG_CODE")
+  private String demogCode;
+
   @Column(name = "PEN_MINCODE")
   private String mincode;
 
