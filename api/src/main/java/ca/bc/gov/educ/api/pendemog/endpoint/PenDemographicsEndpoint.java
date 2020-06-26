@@ -23,7 +23,7 @@ public interface PenDemographicsEndpoint {
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK"), @ApiResponse(responseCode = "404", description = "NOT FOUND.")})
   PenDemographics getPenDemographicsByPen(@PathVariable String pen);
 
-  @GetMapping()
+  @GetMapping
   @PreAuthorize("#oauth2.hasScope('READ_PEN_DEMOGRAPHICS')")
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK")})
   List<PenDemographics> searchPenDemographics(@RequestParam(name="studSurName", defaultValue = " ") String studSurname,
