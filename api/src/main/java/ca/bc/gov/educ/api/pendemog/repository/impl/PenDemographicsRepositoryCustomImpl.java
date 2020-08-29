@@ -15,12 +15,20 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Pen demographics repository custom.
+ */
 @Repository
 public class PenDemographicsRepositoryCustomImpl implements PenDemographicsRepositoryCustom {
 
   @Getter(AccessLevel.PRIVATE)
   private final EntityManager entityManager;
 
+  /**
+   * Instantiates a new Pen demographics repository custom.
+   *
+   * @param em the em
+   */
   @Autowired
   PenDemographicsRepositoryCustomImpl(final EntityManager em) {
     this.entityManager = em;

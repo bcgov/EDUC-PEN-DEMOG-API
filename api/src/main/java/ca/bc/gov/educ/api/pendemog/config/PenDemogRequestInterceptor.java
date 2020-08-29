@@ -8,6 +8,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * The type Pen demog request interceptor.
+ */
 @Component
 public class PenDemogRequestInterceptor extends HandlerInterceptorAdapter {
 

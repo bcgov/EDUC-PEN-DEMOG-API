@@ -4,11 +4,20 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * The type Entity not found exception.
+ */
 public class EntityNotFoundException extends RuntimeException {
 
     private static final long serialVersionUID = 4413979549737000974L;
 
-    public EntityNotFoundException(Class<?> clazz, String... searchParamsMap) {
+  /**
+   * Instantiates a new Entity not found exception.
+   *
+   * @param clazz           the clazz
+   * @param searchParamsMap the search params map
+   */
+  public EntityNotFoundException(Class<?> clazz, String... searchParamsMap) {
             super(EntityNotFoundException.generateMessage(clazz.getSimpleName(), 
                 ExceptionUtils.toMap(String.class, String.class, (Object[]) searchParamsMap)));
         }
