@@ -5,8 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-
+/**
+ * The type Pen demographics.
+ */
 @Data
 @Builder
 @AllArgsConstructor
@@ -30,4 +31,8 @@ public class PenDemographics {
   private String mincode;
   private String createDate;
   private String createUserName;
+  private String studentTrueNo;
+  private String mergeToUserName;
+  private String mergeToCode;
+  private String mergeToDate;
 }

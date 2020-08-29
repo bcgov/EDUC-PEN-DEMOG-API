@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Api error.
+ */
 public class ApiError {
 
 	private HttpStatus status;
@@ -22,19 +25,37 @@ public class ApiError {
 		timestamp = LocalDateTime.now();
 	}
 
-	public ApiError(HttpStatus status) {
+  /**
+   * Instantiates a new Api error.
+   *
+   * @param status the status
+   */
+  public ApiError(HttpStatus status) {
 		this();
 		this.status = status;
 	}
 
-	ApiError(HttpStatus status, Throwable ex) {
+  /**
+   * Instantiates a new Api error.
+   *
+   * @param status the status
+   * @param ex     the ex
+   */
+  ApiError(HttpStatus status, Throwable ex) {
 		this();
 		this.status = status;
 		this.message = "Unexpected error";
 		this.debugMessage = ex.getLocalizedMessage();
 	}
 
-	public ApiError(HttpStatus status, String message, Throwable ex) {
+  /**
+   * Instantiates a new Api error.
+   *
+   * @param status  the status
+   * @param message the message
+   * @param ex      the ex
+   */
+  public ApiError(HttpStatus status, String message, Throwable ex) {
 		this();
 		this.status = status;
 		this.message = message;
@@ -61,7 +82,12 @@ public class ApiError {
 				fieldError.getDefaultMessage());
 	}
 
-	public void addValidationErrors(List<FieldError> fieldErrors) {
+  /**
+   * Add validation errors.
+   *
+   * @param fieldErrors the field errors
+   */
+  public void addValidationErrors(List<FieldError> fieldErrors) {
 		fieldErrors.forEach(this::addValidationError);
 	}
 
@@ -69,48 +95,103 @@ public class ApiError {
 		this.addValidationError(objectError.getObjectName(), objectError.getDefaultMessage());
 	}
 
-	public void addValidationError(List<ObjectError> globalErrors) {
+  /**
+   * Add validation error.
+   *
+   * @param globalErrors the global errors
+   */
+  public void addValidationError(List<ObjectError> globalErrors) {
 		globalErrors.forEach(this::addValidationError);
 	}
 
 
-	public HttpStatus getStatus() {
+  /**
+   * Gets status.
+   *
+   * @return the status
+   */
+  public HttpStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(HttpStatus status) {
+  /**
+   * Sets status.
+   *
+   * @param status the status
+   */
+  public void setStatus(HttpStatus status) {
 		this.status = status;
 	}
 
-	public LocalDateTime getTimestamp() {
+  /**
+   * Gets timestamp.
+   *
+   * @return the timestamp
+   */
+  public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(LocalDateTime timestamp) {
+  /**
+   * Sets timestamp.
+   *
+   * @param timestamp the timestamp
+   */
+  public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
 
-	public String getMessage() {
+  /**
+   * Gets message.
+   *
+   * @return the message
+   */
+  public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
+  /**
+   * Sets message.
+   *
+   * @param message the message
+   */
+  public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public String getDebugMessage() {
+  /**
+   * Gets debug message.
+   *
+   * @return the debug message
+   */
+  public String getDebugMessage() {
 		return debugMessage;
 	}
 
-	public void setDebugMessage(String debugMessage) {
+  /**
+   * Sets debug message.
+   *
+   * @param debugMessage the debug message
+   */
+  public void setDebugMessage(String debugMessage) {
 		this.debugMessage = debugMessage;
 	}
 
-	public List<ApiSubError> getSubErrors() {
+  /**
+   * Gets sub errors.
+   *
+   * @return the sub errors
+   */
+  public List<ApiSubError> getSubErrors() {
 		return subErrors;
 	}
 
-	public void setSubErrors(List<ApiSubError> subErrors) {
+  /**
+   * Sets sub errors.
+   *
+   * @param subErrors the sub errors
+   */
+  public void setSubErrors(List<ApiSubError> subErrors) {
 		this.subErrors = subErrors;
 	}
 

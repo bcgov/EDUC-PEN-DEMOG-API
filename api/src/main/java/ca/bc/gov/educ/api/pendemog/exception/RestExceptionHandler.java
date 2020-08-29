@@ -17,6 +17,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
+/**
+ * The type Rest exception handler.
+ */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
@@ -44,13 +47,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }
 
-    /**
-     * Handles EntityNotFoundException. Created to encapsulate errors with more detail than javax.persistence.EntityNotFoundException.
-     *
-     * @param ex the EntityNotFoundException
-     * @return the ApiError object
-     */
-    @ExceptionHandler(EntityNotFoundException.class)
+  /**
+   * Handles EntityNotFoundException. Created to encapsulate errors with more detail than javax.persistence.EntityNotFoundException.
+   *
+   * @param ex the EntityNotFoundException
+   * @return the ApiError object
+   */
+  @ExceptionHandler(EntityNotFoundException.class)
     protected ResponseEntity<Object> handleEntityNotFound(
             EntityNotFoundException ex) {
         log.info("handleEntityNotFound", ex);
@@ -60,13 +63,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponseEntity(apiError);
     }
 
-    /**
-     * Handles InvalidParameterException, InvalidValueException
-     *
-     * @param ex the InvalidParameterException
-     * @return the ApiError object
-     */
-    @ExceptionHandler({InvalidParameterException.class, InvalidValueException.class})
+  /**
+   * Handles InvalidParameterException, InvalidValueException
+   *
+   * @param ex the InvalidParameterException
+   * @return the ApiError object
+   */
+  @ExceptionHandler({InvalidParameterException.class, InvalidValueException.class})
     protected ResponseEntity<Object> handleInvalidParameter(RuntimeException ex) {
         log.warn("handleInvalidParameter or InvalidValue", ex);
         ApiError apiError = new ApiError(BAD_REQUEST);
@@ -75,13 +78,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponseEntity(apiError);
     }
 
-    /**
-     * Handles IllegalArgumentException
-     *
-     * @param ex the InvalidParameterException
-     * @return the ApiError object
-     */
-    @ExceptionHandler(IllegalArgumentException.class)
+  /**
+   * Handles IllegalArgumentException
+   *
+   * @param ex the InvalidParameterException
+   * @return the ApiError object
+   */
+  @ExceptionHandler(IllegalArgumentException.class)
     protected ResponseEntity<Object> handleInvalidParameter(IllegalArgumentException ex) {
         ApiError apiError = new ApiError(BAD_REQUEST);
         apiError.setMessage(ex.getMessage());

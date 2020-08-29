@@ -7,13 +7,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ * The type Pen demog mvc config.
+ */
 @Configuration
 public class PenDemogMVCConfig implements WebMvcConfigurer {
 
     @Getter(AccessLevel.PRIVATE)
     private final PenDemogRequestInterceptor penDemogRequestInterceptor;
 
-    @Autowired
+  /**
+   * Instantiates a new Pen demog mvc config.
+   *
+   * @param penDemogRequestInterceptor the pen demog request interceptor
+   */
+  @Autowired
     public PenDemogMVCConfig(final PenDemogRequestInterceptor penDemogRequestInterceptor){
         this.penDemogRequestInterceptor = penDemogRequestInterceptor;
     }
