@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
 
 /**
  * The type Pen demographics service.
@@ -79,11 +78,7 @@ public class PenDemographicsService {
   @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
   public CompletableFuture<Page<PenDemographicsEntity>> findAll(Specification<PenDemographicsEntity> penRegBatchSpecs, Integer pageNumber, Integer pageSize, List<Sort.Order> sorts) {
     Pageable paging = PageRequest.of(pageNumber, pageSize, Sort.by(sorts));
-    try {
-      var result = getPenDemographicsRepository().findAll(penRegBatchSpecs, paging);
-      return CompletableFuture.completedFuture(result);
-    } catch (final Exception ex) {
-      throw new CompletionException(ex);
-    }
+    var result = getPenDemographicsRepository().findAll(penRegBatchSpecs, paging);
+    return CompletableFuture.completedFuture(result);
   }
 }
