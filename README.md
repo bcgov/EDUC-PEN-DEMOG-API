@@ -8,3 +8,6 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=bcgov_EDUC-PEN-DEMOG-API&metric=security_rating)](https://sonarcloud.io/dashboard?id=bcgov_EDUC-PEN-DEMOG-API)
 
 ###Getting student demographics data from open vms systems connected to RDB.
+
+API SPECIFICATION
+https://pen-demographics-api-mvubjx-test.pathfinder.gov.bc.ca/swagger-ui/index.html?url=/v3/api-docs
