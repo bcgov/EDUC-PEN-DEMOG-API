@@ -8,15 +8,26 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * The type Pen demographics api resource application.
+ */
 @SpringBootApplication
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableCaching
 public class PenDemographicsApiResourceApplication {
 
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   */
   public static void main(String[] args) {
     SpringApplication.run(PenDemographicsApiResourceApplication.class, args);
   }
 
+  /**
+   * The type Web security configuration.
+   */
   @Configuration
   static
   class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {

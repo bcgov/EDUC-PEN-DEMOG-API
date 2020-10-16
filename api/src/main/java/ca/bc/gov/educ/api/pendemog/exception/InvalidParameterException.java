@@ -4,14 +4,17 @@ package ca.bc.gov.educ.api.pendemog.exception;
  * InvalidParameterException to provide error details when unexpected parameters are passed to endpoint
  *
  * @author John Cox
- *
  */
-
 public class InvalidParameterException extends RuntimeException {
 
 	private static final long serialVersionUID = 3909412893704324490L;
 
-	public InvalidParameterException(String... searchParamsMap) {
+  /**
+   * Instantiates a new Invalid parameter exception.
+   *
+   * @param searchParamsMap the search params map
+   */
+  public InvalidParameterException(String... searchParamsMap) {
         super(InvalidParameterException.generateMessage(searchParamsMap));
     }
 

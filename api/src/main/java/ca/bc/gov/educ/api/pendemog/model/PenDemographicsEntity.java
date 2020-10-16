@@ -9,6 +9,9 @@ import org.hibernate.annotations.Immutable;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * The type Pen demographics entity.
+ */
 @Entity
 @Data
 @Builder
@@ -74,4 +77,17 @@ public class PenDemographicsEntity {
   @Column(name = "CREATE_USER_NAME")
   private String createUserName;
 
+  //below are added for further data pull
+
+  @Column(name = "STUD_TRUE_NO")
+  private String studentTrueNo;
+
+  @Column(name = "MERGE_TO_USER_NAME")
+  private String mergeToUserName;
+
+  @Column(name = "MERGE_TO_CODE")
+  private String mergeToCode;
+
+  @Column(name = "MERGE_TO_DATE")
+  private String mergeToDate;
 }
