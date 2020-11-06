@@ -10,4 +10,4 @@
 ###Getting student demographics data from open vms systems connected to RDB.
 
 API SPECIFICATION
-https://pen-demographics-api-mvubjx-test.pathfinder.gov.bc.ca/swagger-ui/index.html?url=/v3/api-docs
+https://pen-demographics-api-mvubjx-test.apps.silver.devops.gov.bc.ca/swagger-ui/index.html?url=/v3/api-docs
