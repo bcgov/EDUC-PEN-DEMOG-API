@@ -35,7 +35,7 @@ public interface PenDemographicsEndpoint {
    * @return the pen demographics by pen
    */
   @GetMapping("/{pen}")
-  @PreAuthorize("#oauth2.hasScope('READ_PEN_DEMOGRAPHICS')")
+  @PreAuthorize("hasAuthority('SCOPE_READ_PEN_DEMOGRAPHICS')")
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK"), @ApiResponse(responseCode = "404", description = "NOT FOUND.")})
   PenDemographics getPenDemographicsByPen(@PathVariable String pen);
 
@@ -50,7 +50,7 @@ public interface PenDemographicsEndpoint {
    * @return the list
    */
   @GetMapping
-  @PreAuthorize("#oauth2.hasScope('READ_PEN_DEMOGRAPHICS')")
+  @PreAuthorize("hasAuthority('SCOPE_READ_PEN_DEMOGRAPHICS')")
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK")})
   List<PenDemographics> searchPenDemographics(@RequestParam(name="studSurName", defaultValue = " ") String studSurname,
                                               @RequestParam(name="studGiven", defaultValue = " ") String studGiven,
@@ -69,7 +69,7 @@ public interface PenDemographicsEndpoint {
    */
   @GetMapping("/paginated")
   @Async
-  @PreAuthorize("#oauth2.hasScope('READ_PEN_DEMOGRAPHICS')")
+  @PreAuthorize("hasAuthority('SCOPE_READ_PEN_DEMOGRAPHICS')")
   @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "OK"), @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR.")})
   @Transactional(readOnly = true)
   @Tag(name = "Endpoint to support queries with sort, filter and pagination.", description = "This API endpoint exposes flexible way to query the entity by leveraging JPA specifications.")
