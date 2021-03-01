@@ -28,6 +28,6 @@ public class PenDemogMVCConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(penDemogRequestInterceptor).addPathPatterns("/**/**/");
+        registry.addInterceptor(penDemogRequestInterceptor).addPathPatterns("/**");
     }
 }

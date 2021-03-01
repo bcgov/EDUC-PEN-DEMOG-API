@@ -1,6 +1,5 @@
 package ca.bc.gov.educ.api.pendemog.controller;
 
-import ca.bc.gov.educ.api.pendemog.exception.RestExceptionHandler;
 import ca.bc.gov.educ.api.pendemog.filter.FilterOperation;
 import ca.bc.gov.educ.api.pendemog.mappers.PenDemographicsMapper;
 import ca.bc.gov.educ.api.pendemog.repository.PenDemographicsRepository;
@@ -8,21 +7,20 @@ import ca.bc.gov.educ.api.pendemog.struct.PenDemographics;
 import ca.bc.gov.educ.api.pendemog.struct.Search;
 import ca.bc.gov.educ.api.pendemog.struct.SearchCriteria;
 import ca.bc.gov.educ.api.pendemog.struct.ValueType;
-import ca.bc.gov.educ.api.pendemog.support.WithMockOAuth2Scope;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.After;
 import org.junit.Before;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,6 +32,7 @@ import static ca.bc.gov.educ.api.pendemog.struct.Condition.OR;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.jwt;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.asyncDispatch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -42,8 +41,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@AutoConfigureMockMvc
 @SuppressWarnings("squid:S00100")
 public class PenDemographicsControllerTest {
+  @Autowired
   private MockMvc mvc;
   private static final PenDemographicsMapper mapper = PenDemographicsMapper.mapper;
   @Autowired
@@ -53,9 +54,7 @@ public class PenDemographicsControllerTest {
 
   @Before
   public void setUp() throws IOException {
-    MockitoAnnotations.initMocks(this);
-    mvc = MockMvcBuilders.standaloneSetup(controller)
-        .setControllerAdvice(new RestExceptionHandler()).build();
+    MockitoAnnotations.openMocks(this);
     final File file = new File(
         Objects.requireNonNull(getClass().getClassLoader().getResource("PenDemogSampleData.json")).getFile()
     );
@@ -87,10 +86,10 @@ public class PenDemographicsControllerTest {
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testGetPenDemographicsByPen_GivenPenExistInDB_ShouldReturnStatusOk() throws Exception {
 
     this.mvc.perform(get("/7613009916")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andDo(print())
@@ -102,104 +101,106 @@ public class PenDemographicsControllerTest {
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testGetPenDemographicsByPen_GivenPenDoesNotExistInDB_ShouldReturnStatusNotFound() throws Exception {
 
     this.mvc.perform(get("/7613009911")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON)).andDo(print())
         .andExpect(status().isNotFound());
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testSearchPenDemographics_GivenNoQueryParameters_ShouldReturnStatusOkWithNoResults() throws Exception {
 
     this.mvc.perform(get("/")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON)).andDo(print())
         .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testSearchPenDemographics_GivenOnlySexInQueryParam_ShouldReturnStatusOkAndNoResults() throws Exception {
 
     this.mvc.perform(get("/?studSex=Female")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON)).andDo(print())
         .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testSearchPenDemographics_GivenOnlyDOBInQueryParam_ShouldReturnStatusOk() throws Exception {
 
     this.mvc.perform(get("/?studBirth=20010519")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON)).andDo(print())
         .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testSearchPenDemographics_GivenWrongFormatDOBInQueryParam_ShouldReturnStatusBadRequest() throws Exception {
 
     this.mvc.perform(get("/?studBirth=2001-05-19")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON)).andDo(print())
         .andExpect(status().isBadRequest());
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testSearchPenDemographics2_GivenWrongFormatDOBInQueryParam_ShouldReturnStatusBadRequest() throws Exception {
 
     this.mvc.perform(get("/?studBirth=00000000")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
         .accept(MediaType.APPLICATION_JSON)).andDo(print())
         .andExpect(status().isBadRequest());
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_GivenNoSearchCriteria_ShouldReturnStatusOk() throws Exception {
     MvcResult result = this.mvc
         .perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
             .contentType(APPLICATION_JSON))
         .andReturn();
     this.mvc.perform(asyncDispatch(result)).andDo(print()).andExpect(status().isOk());
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_GivenPageSize100_ShouldReturnStatusOkAndAtMost100Records() throws Exception {
     MvcResult result = this.mvc
-        .perform(get("/paginated").param("pageSize", "100")
+        .perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+            .param("pageSize", "100")
             .contentType(APPLICATION_JSON))
         .andReturn();
     this.mvc.perform(asyncDispatch(result)).andDo(print()).andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(100)));
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_GivenPageNumber_ShouldReturnStatusOkAndPage() throws Exception {
     MvcResult result = this.mvc
-        .perform(get("/paginated").param("pageNumber", "1")
+        .perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+            .param("pageNumber", "1")
             .contentType(APPLICATION_JSON))
         .andReturn();
     this.mvc.perform(asyncDispatch(result)).andDo(print()).andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(10))).andExpect(jsonPath("$.pageable.pageNumber", is(1)));
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_GivenSortByStudSurname_ShouldReturnStatusOk() throws Exception {
     Map<String, String> sortMap = new HashMap<>(1);
     sortMap.put("studSurname", "DESC");
     MvcResult result = this.mvc
-        .perform(get("/paginated").param("sort", new ObjectMapper().writeValueAsString(sortMap))
+        .perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+            .param("sort", new ObjectMapper().writeValueAsString(sortMap))
             .contentType(APPLICATION_JSON))
         .andReturn();
     this.mvc.perform(asyncDispatch(result)).andDo(print()).andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(10))).andExpect(jsonPath("$.sort.sorted", is(true)));
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_givenDifferentFilters_ShouldReturnStatusOk() throws Exception {
     Map<String, String> sortMap = new HashMap<>(1);
     sortMap.put("studSurname", "DESC");
@@ -215,14 +216,15 @@ public class PenDemographicsControllerTest {
     ObjectMapper objectMapper = new ObjectMapper();
     String criteriaJSON = objectMapper.writeValueAsString(searches);
     MvcResult result = this.mvc
-        .perform(get("/paginated").param("sort", new ObjectMapper().writeValueAsString(sortMap)).param("searchCriteriaList", criteriaJSON)
+        .perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+            .param("sort", new ObjectMapper().writeValueAsString(sortMap)).param("searchCriteriaList", criteriaJSON)
             .contentType(APPLICATION_JSON))
         .andReturn();
     this.mvc.perform(asyncDispatch(result)).andDo(print()).andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(1))).andExpect(jsonPath("$.sort.sorted", is(true)));
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_givenDifferentFilters2_ShouldReturnStatusOk() throws Exception {
     Map<String, String> sortMap = new HashMap<>(1);
     sortMap.put("studSurname", "DESC");
@@ -242,13 +244,14 @@ public class PenDemographicsControllerTest {
     ObjectMapper objectMapper = new ObjectMapper();
     String criteriaJSON = objectMapper.writeValueAsString(searches);
     MvcResult result = this.mvc
-        .perform(get("/paginated").param("sort", new ObjectMapper().writeValueAsString(sortMap)).param("searchCriteriaList", criteriaJSON)
+        .perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+            .param("sort", new ObjectMapper().writeValueAsString(sortMap)).param("searchCriteriaList", criteriaJSON)
             .contentType(APPLICATION_JSON))
         .andReturn();
     this.mvc.perform(asyncDispatch(result)).andDo(print()).andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(2))).andExpect(jsonPath("$.sort.sorted", is(true)));
   }
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_givenInvalidJSONString_ShouldReturnStatusOk() throws Exception {
     Map<String, String> sortMap = new HashMap<>(1);
     sortMap.put("studSurname", "DESC");
@@ -263,14 +266,17 @@ public class PenDemographicsControllerTest {
     searches.add(Search.builder().condition(AND).searchCriteriaList(criteriaList1).build());
     ObjectMapper objectMapper = new ObjectMapper();
     String criteriaJSON = objectMapper.writeValueAsString(searches);
-    this.mvc.perform(get("/paginated").param("sort", new ObjectMapper().writeValueAsString(sortMap)).param("searchCriteriaList", criteriaJSON)
+    this.mvc.perform(get("/paginated")
+        .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+        .param("sort", new ObjectMapper().writeValueAsString(sortMap)).param("searchCriteriaList", criteriaJSON)
         .contentType(APPLICATION_JSON)).andDo(print()).andExpect(status().isBadRequest());
   }
 
   @Test
-  @WithMockOAuth2Scope(scope = "READ_PEN_DEMOGRAPHICS")
   public void testReadPenDemographicsPaginated_givenInvalidJSONString2_ShouldReturnStatusOk() throws Exception {
-    this.mvc.perform(get("/paginated").param("searchCriteriaList", "criteria_invalid")
+    this.mvc.perform(get("/paginated")
+            .with(jwt().jwt((jwt) -> jwt.claim("scope", "READ_PEN_DEMOGRAPHICS")))
+            .param("searchCriteriaList", "criteria_invalid")
         .contentType(APPLICATION_JSON)).andDo(print()).andExpect(status().isBadRequest());
   }
 
