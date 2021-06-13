@@ -14,20 +14,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class PenDemogMVCConfig implements WebMvcConfigurer {
 
     @Getter(AccessLevel.PRIVATE)
-    private final PenDemogRequestInterceptor penDemogRequestInterceptor;
+    private final RequestResponseInterceptor requestResponseInterceptor;
 
   /**
    * Instantiates a new Pen demog mvc config.
    *
-   * @param penDemogRequestInterceptor the pen demog request interceptor
+   * @param requestResponseInterceptor the pen demog request interceptor
    */
   @Autowired
-    public PenDemogMVCConfig(final PenDemogRequestInterceptor penDemogRequestInterceptor){
-        this.penDemogRequestInterceptor = penDemogRequestInterceptor;
+    public PenDemogMVCConfig(final RequestResponseInterceptor requestResponseInterceptor){
+        this.requestResponseInterceptor = requestResponseInterceptor;
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(penDemogRequestInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(requestResponseInterceptor).addPathPatterns("/**");
     }
 }

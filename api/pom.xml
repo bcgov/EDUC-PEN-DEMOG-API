@@ -16,7 +16,8 @@
       src/main/java/ca/bc/gov/educ/api/pendemog/mappers/**,
       src/main/java/ca/bc/gov/educ/api/pendemog/exception/**,
       src/main/java/ca/bc/gov/educ/api/pendemog/model/**,
-      src/main/java/ca/bc/gov/educ/api/pendemog/struct/**
+      src/main/java/ca/bc/gov/educ/api/pendemog/struct/**,
+      src/main/java/ca/bc/gov/educ/api/pendemog/helpers/**,
     </sonar.exclusions>
     <java.version>11</java.version>
     <maven.compiler.version>3.8.0</maven.compiler.version>
